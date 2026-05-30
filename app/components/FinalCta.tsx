@@ -5,7 +5,7 @@ import { CoverCircleDuo } from "./Icons";
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-coverSalbei px-6 py-16 md:px-12 md:py-24">
+    <section className="relative -mt-px overflow-hidden bg-coverSalbei px-6 pb-14 pt-14 md:px-12 md:pb-16 md:pt-16">
       <CoverCircleDuo
         variant="salbei"
         placement="bottom-right"

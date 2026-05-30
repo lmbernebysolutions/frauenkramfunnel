@@ -17,6 +17,10 @@ export interface PricingOption {
   vatLabel: string;
   shippingLabel: string;
   isBestseller: boolean;
+  oilLearnMore?: {
+    href: string;
+    label: string;
+  };
 }
 
 export interface Testimonial {

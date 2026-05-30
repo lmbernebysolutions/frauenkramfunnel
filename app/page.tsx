@@ -9,8 +9,10 @@ import Header from "@/app/components/Header";
 import Hero from "@/app/components/Hero";
 import PricingSection from "@/app/components/PricingSection";
 import ProblemSection from "@/app/components/ProblemSection";
+import { SectionWaveDivider } from "@/app/components/SectionDivider";
 import SocialProof from "@/app/components/SocialProof";
 import { faqItems } from "@/lib/content";
+import { colors } from "@/lib/design-tokens";
 
 export const metadata: Metadata = {
   title: "Frauenkram: Haut und Wechseljahre – Carsta Pröstler",
@@ -39,11 +41,13 @@ export default function Page() {
       <main>
         <AnalyticsGate />
         <Hero />
+        <SectionWaveDivider colorTop={colors.coverSalbei} colorBottom={colors.coverCanvas} />
         <SocialProof />
         <ProblemSection />
         <PricingSection />
         <ExpertSection />
         <FaqSection />
+        <SectionWaveDivider colorTop={colors.coverCanvas} colorBottom={colors.coverSalbei} />
         <FinalCta />
       </main>
       <Footer />

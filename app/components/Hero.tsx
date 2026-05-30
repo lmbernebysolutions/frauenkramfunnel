@@ -7,7 +7,7 @@ import { CoverCircleDuo, HexagonCluster } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className={`relative overflow-hidden bg-coverSalbei px-6 pb-16 pt-16 md:px-10 md:pb-20 md:pt-24 ${zIndexClass.canvas}`}>
+    <section className={`relative overflow-hidden bg-coverSalbei px-6 pb-14 pt-16 md:px-10 md:pb-16 md:pt-24 ${zIndexClass.canvas}`}>
       <CoverCircleDuo
         variant="salbei"
         className={`absolute left-0 top-0 h-[min(70vw,560px)] w-full max-w-[620px] ${zIndexClass.circles}`}
@@ -35,7 +35,18 @@ export default function Hero() {
         >
           {heroContent.ctaLabel}
         </a>
-        <p className="font-body mt-4 text-sm text-white/90">{heroContent.microcopy}</p>
+        <ul className="font-body mt-4 flex flex-col items-center gap-1 text-sm text-white/90 md:flex-row md:gap-0">
+          {heroContent.microcopyLines.map((line, index) => (
+            <li key={line} className="flex items-center">
+              {index > 0 ? (
+                <span className="mx-2 hidden text-white/70 md:inline" aria-hidden="true">
+                  |
+                </span>
+              ) : null}
+              {line}
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={`relative mx-auto mt-8 w-[255px] md:w-[315px] ${zIndexClass.product}`}>
         <Image

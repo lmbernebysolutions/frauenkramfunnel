@@ -8,7 +8,7 @@ export const heroContent = {
     "Erfahre von dermazeutischer Kosmetikerin und Hormoncoach Carsta Pröstler die natürlichen Longevity Balance Routinen, um Haut und Körper in der Menopause optimal zu unterstützen.",
   confidenceCue: "⭐️ 4.9/5 | Ratgeber (Paperback & Kindle) + Exklusives Bundle",
   ctaLabel: "→ Jetzt Buch sichern & Hautbild verbessern",
-  microcopy: "✓ 14 Tage Zufriedenheitsgarantie | ✓ Einmalige Zahlung – kein Abo",
+  microcopyLines: ["✓ 14 Tage Zufriedenheitsgarantie", "✓ Einmalige Zahlung – kein Abo"] as const,
   expertBadge: "Longevity Balance Methode – Hormonell & dermazeutisch fundiert",
 } as const;
 
@@ -62,6 +62,10 @@ export const pricingOptions: PricingOption[] = [
     vatLabel: "inkl. MwSt.",
     shippingLabel: "✅ Bonus: GRATIS VERSAND",
     isBestseller: true,
+    oilLearnMore: {
+      href: "#faq",
+      label: "Mehr erfahren zum Lovely Body Oil →",
+    },
   },
 ];
 

@@ -6,6 +6,7 @@ import { pricingOptions, pricingTimeline } from "@/lib/content";
 import { zIndexClass } from "@/lib/design-tokens";
 import { validatePricingOption } from "@/lib/pricing-validation";
 import { HexagonCluster } from "./Icons";
+import { PricingProductVisual } from "./PricingProductVisual";
 
 export default function PricingSection() {
   const [selectedOption, setSelectedOption] = useState<"guide" | "bundle" | null>(null);
@@ -62,20 +63,21 @@ export default function PricingSection() {
                 : "Das Regenerations-Bundle | „Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstütze deine Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.";
 
             return (
-              <button
+              <div
                 key={option.id}
-                type="button"
-                onClick={() => setSelectedOption(option.id)}
-                aria-pressed={isSelected}
-                aria-label={`${option.name} – ${isSelected ? "ausgewählt" : "nicht ausgewählt"}`}
-                className={`relative rounded-3xl border-2 p-6 text-left transition-all duration-300 ${
-                  cardLayerClass
-                } ${
+                className={`relative rounded-3xl border-2 transition-all duration-300 ${cardLayerClass} ${
                   isSelected
                     ? "border-coverSalbei bg-coverSalbeiSoft shadow-lg ring-2 ring-coverKhaki ring-offset-2 ring-offset-coverCanvas"
                     : "border-coverSand bg-coverCanvas shadow-sm hover:border-coverKhaki/70"
                 }`}
               >
+                <button
+                  type="button"
+                  onClick={() => setSelectedOption(option.id)}
+                  aria-pressed={isSelected}
+                  aria-label={`${option.name} – ${isSelected ? "ausgewählt" : "nicht ausgewählt"}`}
+                  className="w-full rounded-3xl p-6 text-left"
+                >
                 <span
                   className={`relative mb-4 inline-flex min-h-[32px] items-center gap-2 rounded-full px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide ${zIndexClass.text} ${
                     isSelected
@@ -104,6 +106,7 @@ export default function PricingSection() {
                   </span>
                   {isSelected ? "Deine Auswahl" : "Paket wählen"}
                 </span>
+                <PricingProductVisual variant={option.id} />
                 {isBundle ? (
                   <HexagonCluster
                     variant="pricing"
@@ -133,7 +136,18 @@ export default function PricingSection() {
                     ))}
                   </ul>
                 ) : null}
-              </button>
+                </button>
+                {option.oilLearnMore ? (
+                  <div className="border-t border-coverSand/70 px-6 pb-5 pt-3">
+                    <a
+                      href={option.oilLearnMore.href}
+                      className="inline-flex min-h-[48px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas"
+                    >
+                      {option.oilLearnMore.label}
+                    </a>
+                  </div>
+                ) : null}
+              </div>
             );
           })}
         </div>
@@ -185,7 +199,11 @@ export default function PricingSection() {
             onClick={handleCheckout}
             disabled={!canCheckout}
             aria-disabled={!canCheckout}
-            className="mt-6 inline-flex min-h-[56px] w-full items-center justify-center rounded-full bg-coverRosa px-6 py-3 font-heading text-base font-bold text-white transition-colors duration-300 hover:bg-coverKhaki focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverCanvas focus-visible:ring-offset-2 focus-visible:ring-offset-erdton900 disabled:cursor-not-allowed disabled:bg-coverSand disabled:text-erdton900/70"
+            className={`mt-6 inline-flex min-h-[56px] w-full items-center justify-center rounded-full px-6 py-3 font-heading text-base font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas ${
+              canCheckout
+                ? "bg-coverRosa text-white hover:bg-[#c28f8e] focus-visible:ring-coverCanvas focus-visible:ring-offset-erdton900"
+                : "cursor-not-allowed border border-coverSand/80 bg-coverSand/35 text-erdton900/50"
+            } ${checkoutState === "processing" ? "cursor-wait opacity-80" : ""}`}
           >
             {checkoutState === "processing" ? "Checkout wird vorbereitet..." : "→ Weiter zum Checkout"}
           </button>
