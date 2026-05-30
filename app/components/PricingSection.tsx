@@ -49,7 +49,7 @@ export default function PricingSection() {
             </li>
           ))}
         </ol>
-        <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center md:gap-8">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-5">
           {pricingOptions.map((option) => {
             const isSelected = selectedOption === option.id;
             const isBundle = option.id === "bundle";

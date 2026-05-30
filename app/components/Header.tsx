@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
@@ -10,17 +11,19 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-coverSand/80 bg-coverCanvas/95 shadow-[0_1px_0_rgba(43,19,7,0.04)] backdrop-blur-md">
-      <div className="mx-auto flex h-[68px] w-full max-w-6xl items-center justify-between gap-4 px-4 md:h-[76px] md:px-6">
+      <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-4 px-6 md:h-[84px] md:px-10">
         <Link
           href="/"
-          className="group inline-flex min-h-[48px] flex-col justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas"
+          className="inline-flex min-h-[48px] shrink-0 items-center py-1 pl-1 pr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas md:pl-2 md:pr-3"
         >
-          <span className="font-heading text-lg font-bold leading-none tracking-wide text-erdton900 transition-colors duration-300 group-hover:text-coverSalbei md:text-xl">
-            Frauenkram
-          </span>
-          <span className="font-body mt-1 text-[11px] tracking-[0.18em] text-erdton900/55 uppercase md:text-xs">
-            Haut &amp; Wechseljahre
-          </span>
+          <Image
+            src="/images/balance-institut-logo.webp"
+            alt="Balance Institut – Carsta Pröstler, Expertin für Haut und Wechseljahre"
+            width={220}
+            height={155}
+            priority
+            className="h-auto w-[118px] md:w-[140px]"
+          />
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-1 md:flex">
@@ -37,7 +40,7 @@ export default function Header() {
 
         <a
           href="#angebote"
-          className="inline-flex min-h-[48px] shrink-0 items-center rounded-full border border-coverRosa/30 bg-coverRosa px-5 font-heading text-sm font-bold text-white shadow-sm transition-colors duration-300 hover:border-coverKhaki hover:bg-coverKhaki focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas md:min-h-[52px] md:px-6"
+          className="inline-flex min-h-[48px] shrink-0 items-center rounded-full border border-coverRosa/30 bg-coverRosa px-5 py-1 font-heading text-sm font-bold text-white shadow-sm transition-colors duration-300 hover:border-coverKhaki hover:bg-coverKhaki focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas md:min-h-[52px] md:px-6 md:py-1.5"
         >
           Paket wählen
         </a>

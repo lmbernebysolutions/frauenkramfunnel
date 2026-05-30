@@ -4,10 +4,11 @@ import Image from "next/image";
 import { heroContent } from "@/lib/content";
 import { zIndexClass } from "@/lib/design-tokens";
 import { CoverCircleDuo, HexagonCluster } from "./Icons";
+import { SectionCurveBottom } from "./SectionWave";
 
 export default function Hero() {
   return (
-    <section className={`relative overflow-hidden bg-coverSalbei px-6 pb-20 pt-16 md:px-10 md:pb-24 md:pt-24 ${zIndexClass.canvas}`}>
+    <section className={`relative overflow-hidden bg-coverSalbei px-6 pb-16 pt-16 md:px-10 md:pb-20 md:pt-24 ${zIndexClass.canvas}`}>
       <CoverCircleDuo
         variant="salbei"
         className={`absolute left-0 top-0 h-[min(70vw,560px)] w-full max-w-[620px] ${zIndexClass.circles}`}
@@ -51,6 +52,7 @@ export default function Hero() {
           {heroContent.expertBadge}
         </p>
       </div>
+      <SectionCurveBottom fill="#fdfbf7" />
     </section>
   );
 }
