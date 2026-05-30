@@ -17,6 +17,8 @@ export interface PricingOption {
   vatLabel: string;
   shippingLabel: string;
   isBestseller: boolean;
+  /** Durchgestrichener Normalpreis (PAngV / Einzelwert) */
+  compareAtPriceLabel?: string;
   oilLearnMore?: {
     href: string;
     label: string;

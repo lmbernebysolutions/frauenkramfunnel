@@ -126,7 +126,21 @@ export default function PricingSection() {
                 ) : null}
                 <h3 className={`relative font-heading type-h3 text-erdton900 ${zIndexClass.text}`}>{option.name}</h3>
                 <p className={`relative font-body mt-2 text-sm leading-relaxed text-erdton900/80 ${zIndexClass.text}`}>{exactOfferCopy}</p>
-                <p className={`relative font-heading mt-4 text-lg font-bold text-erdton900 ${zIndexClass.text}`}>{option.priceLabel}</p>
+                {option.compareAtPriceLabel ? (
+                  <p className={`relative font-body mt-4 text-sm text-erdton900/60 ${zIndexClass.text}`}>
+                    <span className="sr-only">Normalpreis </span>
+                    <span aria-hidden="true" className="line-through decoration-erdton900/40">
+                      {option.compareAtPriceLabel}
+                    </span>
+                  </p>
+                ) : null}
+                <p
+                  className={`relative font-heading text-lg font-bold text-erdton900 ${zIndexClass.text} ${
+                    option.compareAtPriceLabel ? "mt-1" : "mt-4"
+                  }`}
+                >
+                  {option.priceLabel}
+                </p>
                 <p className={`relative font-body mt-1 text-xs text-erdton900/75 ${zIndexClass.text}`}>{option.vatLabel}</p>
                 <p className={`relative font-body mt-2 text-sm text-erdton900/80 ${zIndexClass.text}`}>{option.shippingLabel}</p>
                 {validationByOption[option.id].length > 0 ? (
@@ -141,6 +155,8 @@ export default function PricingSection() {
                   <div className="border-t border-coverSand/70 px-6 pb-5 pt-3">
                     <a
                       href={option.oilLearnMore.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex min-h-[48px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas"
                     >
                       {option.oilLearnMore.label}

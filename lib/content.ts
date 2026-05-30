@@ -58,12 +58,12 @@ export const pricingOptions: PricingOption[] = [
     name: "Das Regenerations-Bundle",
     description:
       "„Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstütze deine Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.",
-    priceLabel: "Preis: €49,90",
+    priceLabel: "Preis: €57,80",
     vatLabel: "inkl. MwSt.",
     shippingLabel: "✅ Bonus: GRATIS VERSAND",
     isBestseller: true,
     oilLearnMore: {
-      href: "#faq",
+      href: "https://carstaproestler.de/products/lovely-body-oil-150-ml",
       label: "Mehr erfahren zum Lovely Body Oil →",
     },
   },
