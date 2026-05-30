@@ -2,7 +2,7 @@ import type { FaqItem, PricingOption, ProblemCard, SocialProofItem, Testimonial 
 
 export const heroContent = {
   preHeadline:
-    "FÜR DICH IN DEN WECHSELJAHREN – WENN DU DICH IN DEINEM KÖRPER WIEDER ZUHAUSE FÜHLEN WILLST.",
+    "FÜR DICH IN DEN WECHSELJAHREN – WENN DEIN KÖRPER SICH WIEDER RICHTIG ANFÜHLT.",
   headline: "Fühl dich wieder wohl in deiner Haut.",
   subHeadline:
     "Erfahre von dermazeutischer Kosmetikerin und Hormoncoach Carsta Pröstler die natürlichen Longevity Balance Routinen, um Haut und Körper in der Menopause optimal zu unterstützen.",

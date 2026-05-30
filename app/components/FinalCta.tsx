@@ -2,19 +2,17 @@
 
 import { zIndexClass } from "@/lib/design-tokens";
 import { CoverCircleDuo } from "./Icons";
-import { SectionBlendBottom, SectionBlendTop } from "./SectionWave";
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-coverSalbei px-6 pb-16 pt-14 md:px-12 md:pb-20 md:pt-20">
-      <SectionBlendTop color="#fdfbf7" />
+    <section className="relative overflow-hidden bg-coverSalbei px-6 py-16 md:px-12 md:py-24">
       <CoverCircleDuo
         variant="salbei"
         placement="bottom-right"
         className={`absolute bottom-0 right-0 h-[min(70vw,560px)] w-full max-w-[620px] ${zIndexClass.circles}`}
       />
-      <div className={`relative mx-auto max-w-4xl px-6 py-6 text-center md:px-12 md:py-8 ${zIndexClass.text}`}>
-        <h2 className="font-heading type-h2 text-white">Befreie deine Haut und deinen Alltag.</h2>
+      <div className={`relative mx-auto max-w-4xl px-6 py-8 text-center md:px-12 ${zIndexClass.text}`}>
+        <h2 className="font-heading type-h2 text-white">Befrei deine Haut und deinen Alltag.</h2>
         <p className="font-body type-body mt-5 text-white/90">
           Wähle jetzt dein Paket. Entscheide dich für das Regenerations-Bundle und wir schenken dir die
           Versandkosten.
@@ -30,7 +28,6 @@ export default function FinalCta() {
           14 Tage vollständige Zufriedenheitsgarantie.
         </p>
       </div>
-      <SectionBlendBottom color="#fdfbf7" />
     </section>
   );
 }
