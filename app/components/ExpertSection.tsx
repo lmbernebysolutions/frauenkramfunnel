@@ -22,7 +22,7 @@ export default function ExpertSection() {
             />
           </div>
           <h2
-            className={`relative text-center font-heading type-h2 text-erdton900 md:text-left ${zIndexClass.text}`}
+            className={`relative text-center text-balance font-heading type-h2 text-erdton900 ${zIndexClass.text}`}
           >
             {expertContent.headline}
           </h2>

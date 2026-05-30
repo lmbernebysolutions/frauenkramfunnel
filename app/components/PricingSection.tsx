@@ -55,7 +55,7 @@ export default function PricingSection() {
   return (
     <section id="angebote" className="bg-coverCanvas px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-4xl">
-        <h2 className="text-center font-heading type-h2 text-erdton900 md:text-left">
+        <h2 className="text-center text-balance font-heading type-h2 text-erdton900">
           So stabilisierst du Haut und Hormone
         </h2>
         <ol className="mt-6 space-y-2">
