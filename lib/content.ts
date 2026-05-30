@@ -2,10 +2,10 @@ import type { FaqItem, PricingOption, ProblemCard, SocialProofItem, Testimonial 
 
 export const heroContent = {
   preHeadline:
-    "FÜR FRAUEN IN DEN WECHSELJAHREN, DIE SICH IN IHREM KÖRPER WIEDER ZUHAUSE FÜHLEN WOLLEN.",
-  headline: "Fühlen Sie sich wieder wohl in Ihrer Haut.",
+    "FÜR DICH IN DEN WECHSELJAHREN – WENN DU DICH IN DEINEM KÖRPER WIEDER ZUHAUSE FÜHLEN WILLST.",
+  headline: "Fühl dich wieder wohl in deiner Haut.",
   subHeadline:
-    "Erfahren Sie von dermazeutischer Kosmetikerin und Hormoncoach Carsta Pröstler die natürlichen Longevity Balance Routinen, um Haut und Körper in der Menopause optimal zu unterstützen.",
+    "Erfahre von dermazeutischer Kosmetikerin und Hormoncoach Carsta Pröstler die natürlichen Longevity Balance Routinen, um Haut und Körper in der Menopause optimal zu unterstützen.",
   confidenceCue: "⭐️ 4.9/5 | Ratgeber (Paperback & Kindle) + Exklusives Bundle",
   ctaLabel: "→ Jetzt Buch sichern & Hautbild verbessern",
   microcopy: "✓ 14 Tage Zufriedenheitsgarantie | ✓ Einmalige Zahlung – kein Abo",
@@ -27,19 +27,19 @@ export const problemCards: ProblemCard[] = [
   {
     id: "irritations-spirale",
     title: "Kosmetische Irritations-Spirale",
-    body: "Teure Kosmetika, die jahrelang funktionierten, versagen von heute auf morgen. Das ständige Ausprobieren neuer „Wundermittel\" verbrennt nicht nur Geld, sondern auch Nerven. Es fühlt sich an, als würde man die Kontrolle über den eigenen Körper verlieren.",
+    body: "Teure Kosmetika, die jahrelang funktionierten, versagen von heute auf morgen. Das ständige Ausprobieren neuer „Wundermittel\" verbrennt nicht nur Geld, sondern auch Nerven. Es fühlt sich an, als würdest du die Kontrolle über deinen Körper verlieren.",
   },
   {
     id: "spaet-dysbalance",
     title: "Hormonelle Spät-Dysbalance",
-    body: "Die hormonellen Achterbahnen rauben Ihnen Ihre gewohnte Vitalität. Es entsteht eine tiefe Frustration über den plötzlichen Kontrollverlust, die sich schleichend auf Ihren gesamten Alltag auswirkt.",
+    body: "Die hormonellen Achterbahnen rauben dir deine gewohnte Vitalität. Es entsteht eine tiefe Frustration über den plötzlichen Kontrollverlust, die sich schleichend auf deinen gesamten Alltag auswirkt.",
   },
 ];
 
 export const pricingTimeline = [
-  "Verstehen Sie das Zusammenspiel von Haut und Hormonen.",
-  "Wenden Sie Carstas alltagstaugliche Longevity Balance Methode an.",
-  "Erleben Sie neue Balance und ein strahlendes Hautbild.",
+  "Verstehe das Zusammenspiel von Haut und Hormonen.",
+  "Wende Carstas alltagstaugliche Longevity Balance Methode an.",
+  "Erlebe neue Balance und ein strahlendes Hautbild.",
 ] as const;
 
 export const pricingOptions: PricingOption[] = [
@@ -57,7 +57,7 @@ export const pricingOptions: PricingOption[] = [
     id: "bundle",
     name: "Das Regenerations-Bundle",
     description:
-      "„Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstützen Sie Ihre Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.",
+      "„Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstütze deine Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.",
     priceLabel: "Preis: €49,90",
     vatLabel: "inkl. MwSt.",
     shippingLabel: "✅ Bonus: GRATIS VERSAND",
@@ -66,7 +66,7 @@ export const pricingOptions: PricingOption[] = [
 ];
 
 export const expertContent = {
-  headline: "Ihre Begleiterin durch den hormonellen Wandel",
+  headline: "Deine Begleiterin durch den hormonellen Wandel",
   story:
     "Carsta Pröstler ist nicht nur Unternehmerin, dermazeutische Kosmetikerin und Gesundheitscoach. Als Mutter von 5 Kindern in einer Patchworkfamilie weiß sie genau: Gesundheitliche Routinen müssen absolut alltagstauglich sein. Sie hat die Theorien nicht nur studiert, sondern wendet sie täglich bei sich und ihren Klientinnen an.",
 } as const;

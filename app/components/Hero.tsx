@@ -4,7 +4,7 @@ import Image from "next/image";
 import { heroContent } from "@/lib/content";
 import { zIndexClass } from "@/lib/design-tokens";
 import { CoverCircleDuo, HexagonCluster } from "./Icons";
-import { SectionCurveBottom } from "./SectionWave";
+import { SectionBlendBottom } from "./SectionWave";
 
 export default function Hero() {
   return (
@@ -52,7 +52,7 @@ export default function Hero() {
           {heroContent.expertBadge}
         </p>
       </div>
-      <SectionCurveBottom fill="#fdfbf7" />
+      <SectionBlendBottom color="#fdfbf7" />
     </section>
   );
 }

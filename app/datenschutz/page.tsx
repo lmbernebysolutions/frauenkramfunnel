@@ -39,24 +39,24 @@ export default function DatenschutzPage() {
             <section>
               <h2 className="font-heading type-h3 text-erdton900">3. Einwilligung für Analyse- und Marketing-Tools</h2>
               <p className="mt-3 leading-relaxed">
-                Tracking-Technologien (z. B. Google Tag Manager, Meta Pixel) werden erst nach Ihrer ausdrücklichen
+                Tracking-Technologien (z. B. Google Tag Manager, Meta Pixel) werden erst nach deiner ausdrücklichen
                 Einwilligung über den Consent-Banner aktiviert. Die Entscheidung wird lokal gespeichert
-                (`frauenkram_analytics_consent`). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die
-                gespeicherten Website-Daten in Ihrem Browser löschen.
+                (`frauenkram_analytics_consent`). Du kannst deine Einwilligung jederzeit widerrufen, indem du die
+                gespeicherten Website-Daten in deinem Browser löschst.
               </p>
             </section>
             <section>
               <h2 className="font-heading type-h3 text-erdton900">4. Checkout und Bestellabwicklung</h2>
               <p className="mt-3 leading-relaxed">
-                Für die Bestellabwicklung werden Sie an den externen Checkout-Anbieter (Shopify) weitergeleitet. Dort
+                Für die Bestellabwicklung wirst du an den externen Checkout-Anbieter (Shopify) weitergeleitet. Dort
                 gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
               </p>
             </section>
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">5. Ihre Rechte</h2>
+              <h2 className="font-heading type-h3 text-erdton900">5. Deine Rechte</h2>
               <p className="mt-3 leading-relaxed">
-                Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch
-                und Datenübertragbarkeit im Rahmen der gesetzlichen Vorgaben. Wenden Sie sich hierfür an die oben
+                Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch
+                und Datenübertragbarkeit im Rahmen der gesetzlichen Vorgaben. Wende dich hierfür an die oben
                 genannte verantwortliche Stelle.
               </p>
             </section>

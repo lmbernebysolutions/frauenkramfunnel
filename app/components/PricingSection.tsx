@@ -41,7 +41,7 @@ export default function PricingSection() {
   return (
     <section id="angebote" className="bg-coverCanvas px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-4xl">
-        <h2 className="font-heading type-h2 text-erdton900">So stabilisieren Sie Haut und Hormone</h2>
+        <h2 className="font-heading type-h2 text-erdton900">So stabilisierst du Haut und Hormone</h2>
         <ol className="mt-6 space-y-2">
           {pricingTimeline.map((item) => (
             <li key={item} className="font-body type-body text-erdton900/80">
@@ -59,7 +59,7 @@ export default function PricingSection() {
             const exactOfferCopy =
               option.id === "guide"
                 ? "Der Praxis-Ratgeber | „Frauenkram: Haut und Wechseljahre\" — vollgepackt mit Fachwissen und Routinen. Das theoretische Fachfundament für den Wandel."
-                : "Das Regenerations-Bundle | „Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstützen Sie Ihre Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.";
+                : "Das Regenerations-Bundle | „Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstütze deine Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.";
 
             return (
               <button
@@ -102,7 +102,7 @@ export default function PricingSection() {
                       </svg>
                     ) : null}
                   </span>
-                  {isSelected ? "Ihre Auswahl" : "Paket wählen"}
+                  {isSelected ? "Deine Auswahl" : "Paket wählen"}
                 </span>
                 {isBundle ? (
                   <HexagonCluster
@@ -160,7 +160,7 @@ export default function PricingSection() {
           </p>
           {!hasValidSelection ? (
             <p className="font-body mt-4 text-sm text-erdton900/80" role="status" aria-live="polite">
-              Bitte wählen Sie zuerst ein Paket aus, um mit dem Checkout fortzufahren.
+              Bitte wähle zuerst ein Paket aus, um mit dem Checkout fortzufahren.
             </p>
           ) : (
             <p className="font-body mt-4 text-sm font-medium text-erdton900" role="status" aria-live="polite">

@@ -16,8 +16,8 @@ export default function ProblemSection() {
           ))}
         </div>
         <p className="font-body mt-8 rounded-2xl border border-coverSand bg-coverRosa/10 p-4 text-sm italic text-erdton900">
-          Wichtiger Hinweis: Dieses Buch ist nicht für Frauen, die nach schnellen chemischen Pflastern suchen.
-          Es ist für Frauen, die die wahren Ursachen verstehen und ihren Körper natürlich unterstützen wollen.
+          Wichtiger Hinweis: Dieses Buch ist nicht für dich, wenn du nach schnellen chemischen Pflastern suchst.
+          Es ist für dich, wenn du die wahren Ursachen verstehen und deinen Körper natürlich unterstützen willst.
         </p>
       </div>
     </section>

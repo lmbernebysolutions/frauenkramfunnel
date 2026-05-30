@@ -75,7 +75,7 @@ export default function ConsentBanner() {
         Datenschutz & Einwilligung
       </p>
       <p id="consent-description" className="font-body mt-2 text-sm leading-relaxed text-stone-700">
-        Wir nutzen Analyse- und Marketing-Technologien ausschließlich mit Ihrer ausdrücklichen Einwilligung.
+        Wir nutzen Analyse- und Marketing-Technologien ausschließlich mit deiner ausdrücklichen Einwilligung.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <button
