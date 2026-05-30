@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Assistant, Inter } from "next/font/google";
+import { Assistant, Tenor_Sans } from "next/font/google";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const headingFont = Assistant({
@@ -9,16 +10,22 @@ const headingFont = Assistant({
   display: "swap",
 });
 
-const bodyFont = Inter({
+const bodyFont = Tenor_Sans({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400"],
   variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Frauenkram Funnel",
-  description: "High-converting Funnel für Frauenkram.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.legalName}`,
+  },
+  description:
+    "Der ganzheitliche dermazeutische Ratgeber für ein gesundes Hautbild und hormonelle Balance in den Wechseljahren.",
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

@@ -179,12 +179,61 @@ export async function POST(request: NextRequest) {
   }
 
   const hashedData = hashPiiRecursively(parsed.data) as JsonRecord;
+  const eventName = parsed.event.trim();
+  const forwardResult = await forwardToMetaCapi(eventName, parsed.timestamp, hashedData);
 
   return NextResponse.json({
     accepted: true,
-    forwarded: false,
-    event: parsed.event.trim(),
+    forwarded: forwardResult.forwarded,
+    event: eventName,
     timestamp: parsed.timestamp,
     data: hashedData,
+    ...(forwardResult.error ? { forwardError: forwardResult.error } : {}),
   });
+}
+
+async function forwardToMetaCapi(
+  eventName: string,
+  eventTime: number,
+  customData: JsonRecord,
+): Promise<{ forwarded: boolean; error?: string }> {
+  const accessToken = process.env.META_CAPI_ACCESS_TOKEN?.trim();
+  const pixelId = process.env.META_PIXEL_ID?.trim() ?? process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+  const apiVersion = process.env.META_CAPI_API_VERSION?.trim() || "v21.0";
+
+  if (!accessToken || !pixelId) {
+    return { forwarded: false };
+  }
+
+  try {
+    const endpoint = `https://graph.facebook.com/${apiVersion}/${pixelId}/events`;
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: [
+          {
+            event_name: eventName,
+            event_time: eventTime,
+            action_source: "website",
+            custom_data: customData,
+          },
+        ],
+        access_token: accessToken,
+      }),
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      const body = await response.text();
+      return { forwarded: false, error: `Meta CAPI HTTP ${response.status}: ${body.slice(0, 200)}` };
+    }
+
+    return { forwarded: true };
+  } catch (error) {
+    return {
+      forwarded: false,
+      error: error instanceof Error ? error.message : "Meta CAPI request failed",
+    };
+  }
 }

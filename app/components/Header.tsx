@@ -40,7 +40,7 @@ export default function Header() {
 
         <a
           href="#angebote"
-          className="inline-flex min-h-[48px] shrink-0 items-center rounded-full border border-coverRosa/30 bg-coverRosa px-5 py-1 font-heading text-sm font-bold text-white shadow-sm transition-colors duration-300 hover:border-coverKhaki hover:bg-coverKhaki focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas md:min-h-[52px] md:px-6 md:py-1.5"
+          className="inline-flex min-h-[56px] shrink-0 items-center rounded-full border border-coverRosa/30 bg-coverRosa px-5 py-1 font-heading text-sm font-bold text-white shadow-sm transition-colors duration-300 hover:border-coverKhaki hover:bg-coverKhaki focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas md:px-6 md:py-1.5"
         >
           Paket wählen
         </a>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { dispatchCapiEvent } from "@/lib/analytics";
 import { pricingOptions, pricingTimeline } from "@/lib/content";
+import { CheckoutError, redirectToShopifyCheckout } from "@/lib/shopify";
 import { zIndexClass } from "@/lib/design-tokens";
 import { validatePricingOption } from "@/lib/pricing-validation";
 import { HexagonCluster } from "./Icons";
@@ -12,6 +13,7 @@ export default function PricingSection() {
   const [selectedOption, setSelectedOption] = useState<"guide" | "bundle" | null>(null);
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [checkoutState, setCheckoutState] = useState<"idle" | "processing">("idle");
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
   const validationByOption = Object.fromEntries(
     pricingOptions.map((option) => [option.id, validatePricingOption(option)]),
@@ -30,13 +32,24 @@ export default function PricingSection() {
       return;
     }
 
+    setCheckoutError(null);
     setCheckoutState("processing");
-    await dispatchCapiEvent("initiate_checkout", {
-      selected_package: selectedOption,
-      marketing_opt_in: marketingOptIn,
-      funnel_step: "pricing_section",
-    });
-    setCheckoutState("idle");
+
+    try {
+      await dispatchCapiEvent("initiate_checkout", {
+        selected_package: selectedOption,
+        marketing_opt_in: marketingOptIn,
+        funnel_step: "pricing_section",
+      });
+      await redirectToShopifyCheckout(selectedOption);
+    } catch (error) {
+      const message =
+        error instanceof CheckoutError
+          ? error.message
+          : "Checkout konnte nicht gestartet werden. Bitte versuche es erneut.";
+      setCheckoutError(message);
+      setCheckoutState("idle");
+    }
   };
 
   return (
@@ -73,7 +86,10 @@ export default function PricingSection() {
               >
                 <button
                   type="button"
-                  onClick={() => setSelectedOption(option.id)}
+                  onClick={() => {
+                    setSelectedOption(option.id);
+                    setCheckoutError(null);
+                  }}
                   aria-pressed={isSelected}
                   aria-label={`${option.name} – ${isSelected ? "ausgewählt" : "nicht ausgewählt"}`}
                   className="w-full rounded-3xl p-6 text-left"
@@ -208,6 +224,11 @@ export default function PricingSection() {
           {hasOtherOptionErrors ? (
             <p className="font-body mt-2 text-xs text-erdton900/75" role="status" aria-live="polite">
               Hinweis: Nicht ausgewählte Pakete enthalten derzeit inkonsistente Pflichtangaben.
+            </p>
+          ) : null}
+          {checkoutError ? (
+            <p className="font-body mt-4 text-sm text-erdton900" role="alert">
+              {checkoutError}
             </p>
           ) : null}
           <button

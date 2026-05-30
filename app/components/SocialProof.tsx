@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { socialProofItems } from "@/lib/content";
 
 export default function SocialProof() {

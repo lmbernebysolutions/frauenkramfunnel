@@ -48,7 +48,7 @@ export default function Hero() {
           ))}
         </ul>
       </div>
-      <div className={`relative mx-auto mt-8 w-[255px] md:w-[315px] ${zIndexClass.product}`}>
+      <div className={`relative mx-auto mt-8 w-[255px] pb-8 md:w-[315px] md:pb-10 ${zIndexClass.product}`}>
         <Image
           src="/images/buchcover-ohne-text.webp"
           alt="Buchcover Frauenkram: Haut und Wechseljahre"

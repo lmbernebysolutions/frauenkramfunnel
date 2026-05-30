@@ -11,7 +11,7 @@ export default function FaqSection() {
   return (
     <section id="faq" className="bg-coverCanvas px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
-        <h2 className="font-heading type-h2 text-center text-erdton900">Haeufige Fragen im Ueberblick</h2>
+        <h2 className="font-heading type-h2 text-center text-erdton900">Häufige Fragen im Überblick</h2>
         <div className="surface-brand-gradient mt-8 overflow-hidden rounded-3xl border border-coverSand">
           {faqItems.map((item, index) => {
             const expanded = expandedId === item.id;
@@ -32,7 +32,7 @@ export default function FaqSection() {
                   }`}
                   style={edgeCutStyle}
                 >
-                  <span className="font-heading type-h3 pr-2 font-bold leading-snug text-erdton900">{item.question}</span>
+                  <h3 className="font-heading type-h3 pr-2 font-bold leading-snug text-erdton900">{item.question}</h3>
                   <span className={`relative inline-flex h-12 w-12 flex-shrink-0 items-center justify-center text-erdton900/50 transition-all duration-300 group-hover:text-coverKhaki ${zIndexClass.hexagons}`}>
                     <HexagonIcon
                       className={`absolute h-10 w-10 transition-transform duration-300 ${expanded ? "rotate-45" : "group-hover:rotate-45"}`}

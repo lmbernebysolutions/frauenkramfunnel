@@ -13,11 +13,37 @@ import { SectionWaveDivider } from "@/app/components/SectionDivider";
 import SocialProof from "@/app/components/SocialProof";
 import { faqItems } from "@/lib/content";
 import { colors } from "@/lib/design-tokens";
+import { siteConfig } from "@/lib/site";
+
+const pageDescription =
+  "Der ganzheitliche dermazeutische Ratgeber für ein gesundes Hautbild und hormonelle Balance in den Wechseljahren.";
 
 export const metadata: Metadata = {
   title: "Frauenkram: Haut und Wechseljahre – Carsta Pröstler",
-  description:
-    "Der ganzheitliche dermazeutische Ratgeber für ein gesundes Hautbild und hormonelle Balance in den Wechseljahren.",
+  description: pageDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Frauenkram: Haut und Wechseljahre",
+    description: pageDescription,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: "/images/buchcover-ohne-text.webp",
+        width: 315,
+        height: 420,
+        alt: "Buchcover Frauenkram: Haut und Wechseljahre",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frauenkram: Haut und Wechseljahre",
+    description: pageDescription,
+    images: ["/images/buchcover-ohne-text.webp"],
+  },
 };
 
 export default function Page() {
