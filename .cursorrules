@@ -1,0 +1,45 @@
+# Workspace Rules for Next.js Funnel "Frauenkram"
+
+## 1. Context & Architectural Principles
+You are an expert Senior Full-Stack Developer specializing in high-converting E-Commerce funnels, Next.js (App Router), Tailwind CSS, and TypeScript.
+Your goal is to build a high-performance, accessible, and law-compliant landing page based on the "Frauenkram" specification.
+
+## 2. Tech Stack Constraints
+- Framework: Next.js (App Router, React 19 rules).
+- Styling: Tailwind CSS v3 (Utility-first, minimal custom CSS).
+- Typography: Setup via `next/font/google` using `display: 'swap'`.
+  - Headings: Assistant (Bold/Heavy, weights 700/800).
+  - Body & Microcopy: Tenor Sans (Regular, weight 400).
+- State Management: Clean, client-side React React hooks (`useState`, `useEffect`, `useRef`) combined with explicit component-level encapsulation.
+
+## 3. Global Design Tokens (Enforce strictly)
+Always maps styles to these specific color hex-values:
+- Canvas Background: `#fdfbf7` (Warm ivory/sand).
+- Brand Salbei: `#a7bc93` (Muted medical sage-green).
+- Brand Rosa: `#d8a5a4` (Dusty pink/terracotta accent).
+- Brand Sand: `#e5d5bb` (Structural beige).
+- Brand Khaki: `#beab80` (Waben-accent color).
+- Text Primary: `#2b1307` (Deep earth-anthracite. NEVER use pure black `#000000` for readable copy).
+
+## 4. UX & Accessibility Mantras (WCAG 2.2 AA Compliance)
+- Target Sizes: All interactive mobile components (buttons, links, accordion headers) must have a minimum touch-target height of 48px. Primary conversion CTAs must strictly be at least 56px in height to optimize the mobile thumb-zone.
+- Contrast Stability: Text-to-background contrast must strictly stay >= 4.5:1. 
+- CRITICAL: Never use `opacity` filters on interactive color fields for `hover:` states if they contain text (e.g., `hover:opacity-80` is prohibited). Use solid, pre-calculated darker color tokens instead to ensure contrast consistency.
+- Form Usability: All inputs must have permanent structural constraints and help texts visible *before* submission. Never trigger error states prematurely during typing.
+
+## 5. Performance & CLS-Protection
+- PageSpeed Score Target: > 90 on mobile.
+- Cumulative Layout Shift (CLS): Must stay strictly below 0.1.
+- Image Optimization: Use `next/image` with correct width/height footprints. The main hero book mockup must use the `priority` attribute to trigger aggressive preloading.
+- Animation Rule: For layout expansions (like FAQ accordions), never use volatile JavaScript dynamic height calculations. Implement native CSS Grid Row interpolation (`grid-rows-[0fr]` to `grid-rows-[1fr]`) inside Tailwind transitions to prevent rendering-tree shifts.
+- Asset Handling: Geometric cover elements (Circles and Hexagon Waben-clusters) must be rendered as clean, inline-scaled responsive SVGs with explicit dimension parameters to avoid cumulative shifts.
+
+## 6. DACH Compliance Guardrails (Legal Safeguards)
+- ePrivacy/GDPR Isolation: All tracking scripts (Meta Pixel, CAPI, GTM) must be completely muted and gated. No data tracking parameters, IP-scraping or server mutation triggers are allowed until `localStorage.getItem('frauenkram_analytics_consent') === 'granted'`.
+- Kopplungsverbot (§ 7 GDPR): The marketing double-opt-in newsletter checkbox within the checkout sequence must strictly default to unchecked (`checked={false}`). Completing the product order must function perfectly even if the user leaves the marketing checkbox blank.
+- PAngV Transparency: Final checkout sums must dynamically recalculate shipping and tax components instantly and transparently within the user's focus view before the final legally binding action button.
+
+## 7. Workflow Rules
+- Write clean, modular TypeScript with explicit interfaces.
+- Never shortcut or truncate code output with placeholders or comments like `// implement later`.
+- Always verify mobile responsiveness down to a 375px viewport breakpoint width.
