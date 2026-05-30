@@ -50,41 +50,102 @@ function contentSignals(text) {
     hasDermazeutic: t.includes("dermazeut"),
     hasHolistic: t.includes("hormon") && t.includes("haut"),
     hasRitual: t.includes("öl") || t.includes("routine"),
-    hasEarlyPhase: t.includes("wechsel") || t.includes("menopause") || t.includes("perimenopause"),
+    hasEarlyPhase:
+      t.includes("wechsel") ||
+      t.includes("menopause") ||
+      t.includes("perimenopause") ||
+      t.includes("frühe wechseljahre"),
+    hasPremenopauseFaq: t.includes("frühe wechseljahre"),
+    hasMinimalRoutine:
+      t.includes("alltagstaug") ||
+      t.includes("unkompliziert") ||
+      t.includes("4 minuten") ||
+      t.includes("sekunden"),
+    hasPostmenopause: t.includes("postmenopause") || t.includes("post-menopause"),
+    hasEmotionalTone:
+      t.includes("wohl") || t.includes("selbst") || t.includes("balance") || t.includes("nährend"),
   };
 }
 
 function scoreDimension(persona, signals, dimension) {
   const skeptical = persona.skepticismLevel === "high";
   const segment = persona.segment.toLowerCase();
+  const id = persona.id;
 
   switch (dimension) {
     case "firstImpression":
+      if (id === "julia") {
+        return signals.hasDu && signals.hasPremenopauseFaq ? 9 : signals.hasEarlyPhase ? 8 : 7;
+      }
+      if (id === "beate") {
+        return signals.hasDu && signals.hasMinimalRoutine ? 8 : 7;
+      }
+      if (id === "renate") {
+        return signals.hasDu && signals.hasPostmenopause
+          ? 9
+          : signals.hasDu && signals.hasEmotionalTone
+            ? 8
+            : 7;
+      }
       if (signals.hasDu && signals.hasEarlyPhase) {
         return signals.hasLipidScience ? 9 : 8;
       }
       return 6;
     case "messaging":
-      if (segment.includes("verzweifelt") || skeptical) {
+      if (id === "julia") {
+        return signals.hasPremenopauseFaq && signals.hasDu ? 9 : 7;
+      }
+      if (id === "beate") {
+        return signals.hasMinimalRoutine && signals.hasRitual ? 9 : 7;
+      }
+      if (id === "susanne" || skeptical) {
         if (signals.hasLipidScience && signals.hasDermazeutic) {
           return 9;
         }
-        return signals.hasNatural ? 7 : 6;
+        return signals.hasHolistic ? 7 : 6;
       }
-      if (segment.includes("ästhet") || segment.includes("pro-aging")) {
+      if (id === "renate") {
+        if (signals.hasRitual && signals.hasEmotionalTone) {
+          return signals.hasPostmenopause ? 9 : 8;
+        }
+        return 7;
+      }
+      if (segment.includes("ästhet") || segment.includes("emotional")) {
         return signals.hasLipidScience && signals.hasRitual ? 9 : 8;
       }
-      if (segment.includes("karriere") || segment.includes("führungskraft")) {
-        return signals.hasHolistic && signals.hasEarlyPhase ? 8 : 7;
+      if (segment.includes("skinimal")) {
+        return signals.hasMinimalRoutine ? 9 : 7;
+      }
+      if (segment.includes("prämenopause") || segment.includes("information")) {
+        return signals.hasPremenopauseFaq ? 9 : 8;
       }
       return signals.hasDu && signals.hasNatural ? 8 : 7;
     case "trust":
+      if (id === "susanne") {
+        return signals.hasTrust && signals.hasDermazeutic && signals.hasLipidScience ? 9 : 7;
+      }
       return signals.hasTrust && signals.hasDermazeutic ? 8 : signals.hasTrust ? 7 : 6;
     case "clarity":
+      if (id === "beate") {
+        return signals.hasPrice && signals.hasBundle ? 9 : 7;
+      }
       return signals.hasPrice && signals.hasFaq ? 8 : 6;
     case "objections":
-      if (skeptical) {
+      if (id === "julia") {
+        return signals.hasPremenopauseFaq && signals.hasFaq ? 8 : 7;
+      }
+      if (id === "beate") {
+        return signals.hasMinimalRoutine && signals.hasBundle ? 8 : 7;
+      }
+      if (id === "susanne" || skeptical) {
         return signals.hasLipidScience && signals.hasFaq && signals.hasPrice ? 8 : 7;
+      }
+      if (id === "renate") {
+        return signals.hasPostmenopause && signals.hasFaq
+          ? 9
+          : signals.hasBundle && signals.hasRitual
+            ? 8
+            : 7;
       }
       return signals.hasBundle && signals.hasPrice ? 8 : 7;
     default:
@@ -99,8 +160,11 @@ function overallFromScores(scores) {
 
 function verdict(score, persona) {
   if (score >= 8) {
-    if (persona.id === "leonie") {
+    if (persona.id === "beate" || persona.id === "renate") {
       return "Würde das Regenerations-Bundle mit Body-Oil-Ritual wählen.";
+    }
+    if (persona.id === "julia") {
+      return "Würde mit dem Ratgeber (Paperback/Kindle) einsteigen.";
     }
     return "Würde den Ratgeber oder das Bundle wählen und Checkout starten.";
   }
@@ -118,14 +182,17 @@ function likedBullets(persona, signals) {
   if (signals.hasLipidScience) {
     lines.push("- Wissenschaftlicher Lipid-/Hautbezug already above the fold");
   }
-  if (persona.id === "leonie") {
-    lines.push("- Bundle mit Body Oil als Self-Care-Ritual");
+  if (persona.id === "julia") {
+    lines.push("- FAQ „Frühe Wechseljahre“ nimmt Prämenopause-Einwand vorweg");
   }
-  if (persona.id === "tina") {
-    lines.push("- Dermazeutischer Ansatz statt reiner Lifestyle-Versprechen");
+  if (persona.id === "beate") {
+    lines.push("- Alltagstaugliche Routinen ohne 10-Schritte-Programm");
   }
-  if (persona.id === "claudia") {
-    lines.push("- Ganzheitlicher Hormon-Haut-Kompass");
+  if (persona.id === "susanne") {
+    lines.push("- Dermazeutischer Lipid-/Zellbezug statt Wellness-Floskeln");
+  }
+  if (persona.id === "renate") {
+    lines.push("- Bundle mit nährendem Body Oil als Self-Care-Ritual");
   }
   return lines.join("\n");
 }
@@ -154,8 +221,20 @@ function dimensionSummary(dimension, score, persona, signals) {
     },
   };
   const bucket = score >= 8 ? "high" : "low";
-  if (dimension === "messaging" && persona.skepticismLevel === "high" && signals.hasLipidScience) {
+  if (dimension === "messaging" && persona.id === "julia" && signals.hasPremenopauseFaq) {
+    return "Frühe Wechseljahre im FAQ – kein reines „Älterwerden“-Narrativ";
+  }
+  if (dimension === "messaging" && persona.id === "beate" && signals.hasMinimalRoutine) {
+    return "Zeiteffizienz und Öl-Bundle statt Produkt-Stapel";
+  }
+  if (dimension === "messaging" && persona.id === "susanne" && signals.hasLipidScience) {
     return "Lipidsynthese & dermazeutischer Tiefgang im Hero überzeugen";
+  }
+  if (dimension === "messaging" && persona.id === "renate" && signals.hasPostmenopause) {
+    return "Eigene FAQ zu Postmenopause – kein reines Hitzewallungs-Narrativ";
+  }
+  if (dimension === "messaging" && persona.id === "renate" && !signals.hasPostmenopause) {
+    return "Ritual-Story stark – Postmenopause könnte expliziter sein";
   }
   return summaries[dimension][bucket];
 }
@@ -209,7 +288,10 @@ ${persona.objections.map((o) => `- ${o.replace(/\s*\[\d+\]\s*/g, " ").trim()}`).
   const avgScore =
     Math.round((personaRows.reduce((s, r) => s + r.overall, 0) / personaRows.length) * 10) / 10;
 
-  const tina = personaRows.find((r) => r.persona.id === "tina");
+  const susanne = personaRows.find((r) => r.persona.id === "susanne");
+  const julia = personaRows.find((r) => r.persona.id === "julia");
+  const renate = personaRows.find((r) => r.persona.id === "renate");
+  const beate = personaRows.find((r) => r.persona.id === "beate");
 
   const md = `# ICP Website Review: Frauenkram Funnel
 
@@ -221,7 +303,7 @@ ${persona.objections.map((o) => `- ${o.replace(/\s*\[\d+\]\s*/g, " ").trim()}`).
 
 ## Executive Summary
 
-Die Landingpage adressiert Wechseljahre, Haut und Hormonbalance mit transparenter Preisgestaltung und Consent-Gate. Der Hero nennt jetzt explizit die **zelluläre Lipidsynthese** und den **dermazeutischen** Ansatz – das stärkt besonders skeptische Personas (Tina). Stärken: Expertinnen-Story, Paketlogik, FAQ.
+Die Landingpage adressiert Wechseljahre, Haut und Hormonbalance mit transparenter Preisgestaltung. Hero mit **Lipidsynthese** und **dermazeutischem** Ansatz; FAQ zu frühen Wechseljahren; Bundle mit Body Oil für Skinimalism- und Ritual-Segmente.
 
 **Durchschnittsscore: ${avgScore}/10**
 
@@ -245,16 +327,17 @@ ${sections.join("\n---\n\n")}
 - Consent-Banner vor Tracking schafft Vertrauen
 
 ### Segment-spezifische Gaps
-- **Tina (skeptisch):** ${tina && tina.overall >= 8 ? "Hero-Lipid-Claim adressiert Kern-Einwand – weiter FAQ-Tiefe nutzen" : "Noch stärkere Abgrenzung zu Einzelprodukten im Markt"}
-- **Claudia (Karriere):** Brain-Fog-/Schlaf-Bezug könnte im Problem-Block expliziter sein
-- **Leonie (Pro-Aging):** Postmenopause-Ritual-Story im Bundle bereits stark
+- **Julia (Prämenopause):** ${julia && julia.overall >= 8 ? "FAQ „Frühe Wechseljahre“ trifft Kern-Einwand" : "Frühe Phase im Hero noch deutlicher benennen"}
+- **Beate (Skinimalism):** ${beate && beate.overall >= 8 ? "Minimal-Routinen + Ein-Öl-Bundle überzeugen" : "INCI-/Minimalismus-Claim sichtbarer machen"}
+- **Susanne (Biohackerin):** ${susanne && susanne.overall >= 8 ? "Wissenschaftlicher Hero-Claim adressiert Evidenz-Bedarf" : "Mehr Daten/Studienbezug im Expert-Block"}
+- **Renate (Postmenopause):** ${renate && renate.overall >= 8 ? "Ritual-Bundle passt – Postmenopause-Label optional ergänzen" : "Postmenopause explizit in Copy oder FAQ erwähnen"}
 
 ### Priority Matrix
 | Prio | Maßnahme | Impact |
 |------|----------|--------|
-| P1 | Shopify-Env auf Vercel setzen und Checkout smoke-testen | Hoch |
-| P2 | Optional: Brain-Fog-Microcopy im Problem-Block für Claudia | Mittel |
-| P3 | Production-Deploy + erneutes \`npm run review\` | Mittel |
+| P1 | Shopify-Env auf Vercel + Checkout smoke-testen | Hoch |
+| P2 | Optional: „Postmenopause“-Microcopy für Renate | Mittel |
+| P3 | Optional: Skinimalism-Badge im Pricing für Beate | Niedrig |
 
 ---
 

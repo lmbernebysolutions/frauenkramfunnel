@@ -1,4 +1,12 @@
 import type { FaqItem, PricingOption, ProblemCard, SocialProofItem, Testimonial } from "@/types/funnel";
+import { getBundlePricingLabels, getGuidePricingLabels } from "@/lib/pricing";
+
+const guidePricing = getGuidePricingLabels();
+const bundlePricing = getBundlePricingLabels();
+
+const kindleUrl =
+  process.env.NEXT_PUBLIC_AMAZON_KINDLE_URL?.trim() ||
+  "https://www.amazon.de/-/en/Carsta-Pr%C3%B6stler-ebook/dp/B0G3XYHSMF/ref=tmm_kin_swatch_0";
 
 export const heroContent = {
   preHeadline:
@@ -48,12 +56,12 @@ export const pricingOptions: PricingOption[] = [
     name: "Der Praxis-Ratgeber",
     description:
       "„Frauenkram: Haut und Wechseljahre\" — vollgepackt mit Fachwissen und Routinen. Das theoretische Fachfundament für den Wandel.",
-    priceLabel: "Paperback: €25,90 / Kindle: €10,99",
+    priceLabel: guidePricing.priceLabel,
     vatLabel: "inkl. MwSt.",
-    shippingLabel: "Versandkosten: €4,90 (DACH).",
+    shippingLabel: guidePricing.shippingLabel,
     isBestseller: false,
     learnMoreLink: {
-      href: "https://www.amazon.de/-/en/Carsta-Pr%C3%B6stler-ebook/dp/B0G3XYHSMF/ref=tmm_kin_swatch_0",
+      href: kindleUrl,
       label: "Zur Kindle-Version →",
     },
   },
@@ -62,7 +70,9 @@ export const pricingOptions: PricingOption[] = [
     name: "Das Regenerations-Bundle",
     description:
       "„Frauenkram\" (Taschenbuch) + Lovely Body Oil. Unterstütze deine Haut zusätzlich von außen mit diesem nährenden, exklusiven Körperöl.",
-    priceLabel: "Preis: €57,80",
+    priceLabel: bundlePricing.priceLabel,
+    compareAtPriceLabel: bundlePricing.compareAtPriceLabel,
+    savingsLabel: bundlePricing.savingsLabel,
     vatLabel: "inkl. MwSt.",
     shippingLabel: "✅ Bonus: GRATIS VERSAND",
     isBestseller: true,
@@ -102,6 +112,12 @@ export const faqItems: FaqItem[] = [
     question: "Frühe Wechseljahre: Ist dieses Buch passend?",
     answer:
       "Ja, meine Liebe! Genau jetzt ist der perfekte Moment. Mit der Longevity Balance Methode bereiten wir deine Haut und deine Zellen sanft vor, anstatt später nur Symptome zu bekämpfen. Je früher du verstehst, wie dein Körper sich verändert, desto strahlender und unbeschwerter gehst du durch diese Phase.",
+  },
+  {
+    id: "faq-postmenopause",
+    question: "Postmenopause: Ist das Buch auch für mich geeignet?",
+    answer:
+      "Ja. Wenn die stärksten hormonellen Schwankungen vorbei sind, braucht deine Haut oft mehr Schutz und Feuchtigkeit. Die Longevity Balance Methode begleitet dich auch in der Postmenopause – mit alltagstauglichen Routinen und dem nährenden Lovely Body Oil im Bundle, ohne Anti-Aging-Druck.",
   },
   {
     id: "faq-2",

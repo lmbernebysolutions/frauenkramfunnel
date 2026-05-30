@@ -4,59 +4,78 @@
   "createdAt": "2026-05-30",
   "personas": [
     {
-      "id": "tina",
-      "name": "Tina",
-      "title": "Überforderte Symptom-Bekämpferin (47)",
-      "segment": "Verzweifelte Lösungssucherin im Milliardenmarkt",
-      "age": 47,
-      "situation": "Steht stellvertretend für Frauen, die bereits viel Geld für teure Einzelprodukte wie Menopause-Gummibärchen, Gele oder Retreats ausgegeben haben [1]. Sie leidet unter der Informationsflut und fühlt sich im unübersichtlichen Markt oft verunsichert [2, 3].",
+      "id": "julia",
+      "name": "Julia",
+      "title": "Verunsicherte Einsteigerin (42)",
+      "segment": "Informationssuchende Prämenopause",
+      "age": 42,
+      "situation": "Befindet sich in der Prämenopause, die oft schon ab 40 Jahren beginnt, und bemerkt erste unerklärliche Stimmungsschwankungen sowie unregelmäßige Zyklen [1]. Sie fühlt sich noch 'zu jung' für die Wechseljahre und sucht nach Orientierung, da sie die frühen Vorboten oft nicht richtig einordnen kann [2].",
       "buyingTriggers": [
-        "Das 'Holistic Solution'-Versprechen: Ein ganzheitliches 5-Säulen-System, das Ordnung ins Chaos bringt, statt vieler Einzelprodukte (Us vs. Them) [4].",
-        "Radikale Ehrlichkeit und geteilte Krisenerfahrung (Storytelling) durch die Autorin [5].",
-        "Klare, evidenzbasierte Abgrenzung von reinen Lifestyle-Versprechen [6, 7]."
+        "Aufklärung ohne Panikmache und ein sanfter Themeneinstieg (das Front-End-Buch als 'Loss Leader') [3, 4].",
+        "Wissen über den Zusammenhang von ersten Schlafproblemen und frühem Hormonabfall [5].",
+        "Präventive Pflegetipps, bevor die Haut extrem trocken wird [6]."
       ],
       "objections": [
-        "Wird mir hier wieder nur 'gut vermarktete Hoffnung' verkauft? [1]",
-        "Ich habe schon so vieles probiert und Geld ausgegeben – hilft das wirklich? [1]",
-        "Wie unterscheidet sich das von den evidenzlosen Produkten auf dem Markt? [8]"
-      ],
-      "skepticismLevel": "high"
-    },
-    {
-      "id": "claudia",
-      "name": "Claudia",
-      "title": "Führungskraft im Dauerspagat (54)",
-      "segment": "Karrierefokussierte Perfektionistin",
-      "age": 54,
-      "situation": "Steht unter starkem beruflichen Druck und verheimlicht Beschwerden wie Hitzewallungen oder 'Brain Fog' am Arbeitsplatz aus Angst vor Kompetenzverlust ('The Invisible Burden') [9, 10]. Durch chronischen Stress und Schlafmangel ist ihr Cortisolspiegel dauerhaft erhöht [11].",
-      "buyingTriggers": [
-        "Wissenschaftlicher Kompass: Fokus auf mentale Leistungsfähigkeit, Schlaf und Blutzuckerstabilisierung [12, 13].",
-        "Diskrete und effiziente Umsetzbarkeit ohne großen Zeitaufwand im Berufsalltag [14].",
-        "Lösungen gegen den schleichenden Kontrollverlust im Job [15]."
-      ],
-      "objections": [
-        "Ich habe keine Zeit, ein komplexes Programm in meinen Alltag zu integrieren [14].",
-        "Spricht das Buch meine spezifischen kognitiven Probleme (Gedächtnislücken, Brain Fog) an? [15]",
-        "Fehlende Energie für zusätzliche 'Optimierung' [7]."
+        "Betrifft mich dieses Buch überhaupt schon oder ist es nur für ältere Frauen?",
+        "Ich will mich noch nicht mit dem Thema 'Altern' auseinandersetzen.",
+        "Ist das ein weiteres Anti-Aging-Produkt, das mir Komplexe einredet?"
       ],
       "skepticismLevel": "medium"
     },
     {
-      "id": "leonie",
-      "name": "Leonie",
-      "title": "Genießerin der neuen Lebensphase (58)",
-      "segment": "Pro-Aging Ästhetin",
-      "age": 58,
-      "situation": "Befindet sich in der Postmenopause und begreift diese Zeit als Chance für neue Freiheiten und Selbstentdeckung [16, 17]. Sie möchte sich von der 'Prosecco-Kultur' verabschieden und sucht stattdessen nach hochwertigen Self-Care-Ritualen gegen den Verlust von Kollagen und Feuchtigkeit [18, 19].",
+      "id": "beate",
+      "name": "Beate",
+      "title": "Vielreisende Minimalistin (55)",
+      "segment": "Skinimalism & Effizienz",
+      "age": 55,
+      "situation": "Ist beruflich sehr erfolgreich, reist viel und bemerkt, dass ihrer Haut der 'Glow' fehlt, da das Jugendlichkeitshormon DHEA in diesem Alter stark abfällt [7, 8]. Sie hat weder Zeit noch Lust auf eine 10-Schritte-Pflegeroutine und sucht nach dem Konzept des 'Skinimalism' [9].",
       "buyingTriggers": [
-        "Der 'Ritual of Self-Care'-Ansatz: Menopause nicht als Leiden, sondern als Zeit der persönlichen Erneuerung [20].",
-        "Detailliertes Wissen über Lipidverlust, Antioxidantien und hochwertige Pflegeöle [21, 22].",
-        "Hochwertige Upsell-Angebote (wie z. B. das Body Oil als tägliches Ritual) [20, 22]."
+        "Multifunktionale und unkomplizierte Hautpflege (z. B. Reinigungsmilch, die auch als Bodylotion genutzt werden kann) [8].",
+        "Klare, zeiteffiziente Lösungen für den Alltag [10].",
+        "Wenige, aber dafür extrem hochwertige Inhaltsstoffe (kurze INCI-Liste ohne Mineralöle) [11, 12]."
       ],
       "objections": [
-        "Sind die empfohlenen Routinen und Produkte wirklich hochwertig und rein? [23]",
-        "Ist das Buch nur auf die akute Phase der Menopause fokussiert oder auch für die Postmenopause relevant? [24]",
-        "Enthält das Konzept zu viele dogmatische Regeln statt Genuss? [7]"
+        "Wieder ein Ratgeber, der mir eine zeitaufwendige Morgenroutine aufzwingen will?",
+        "Ich möchte keine unzähligen Einzelprodukte im Badezimmer stehen haben.",
+        "Kann ein einziges Öl (Upsell) wirklich so viele Probleme gleichzeitig lösen?"
+      ],
+      "skepticismLevel": "low"
+    },
+    {
+      "id": "susanne",
+      "name": "Susanne",
+      "title": "Analytische Biohackerin (51)",
+      "segment": "Wissenschaftlicher Kompass",
+      "age": 51,
+      "situation": "Mitten in der Menopause und extrem datengetrieben. Sie informiert sich tiefgehend über bioidentische Hormone, das Mikrobiom der Haut und die Funktion von Peptiden [13-15]. Sie verabscheut esoterische Floskeln und sucht nach harter Evidenz.",
+      "buyingTriggers": [
+        "Der Ad-Angle 'The Scientific Compass': Fokus auf Daten, visuelle Beweise und klare biologische Fakten (Östrogenabfall, Insulinresistenz) [16, 17].",
+        "Tiefergehendes Wissen über Inhaltsstoffe, wie z.B. die Stärkung der Hautschutzbarriere durch Omega-Fettsäuren [18].",
+        "Ganzheitlicher Ansatz, der Ernährung, Blutzuckerstabilisierung und Hautgesundheit wissenschaftlich verknüpft [19, 20]."
+      ],
+      "objections": [
+        "Fehlt diesem Buch die echte medizinische und dermatologische Evidenz?",
+        "Sind die Inhaltsstoffe des beworbenen Body Oils wissenschaftlich fundiert oder nur gutes Marketing?",
+        "Ist das wieder nur eine oberflächliche Wellness-Broschüre?"
+      ],
+      "skepticismLevel": "high"
+    },
+    {
+      "id": "renate",
+      "name": "Renate",
+      "title": "Postmenopausale Ästhetin (61)",
+      "segment": "Emotional Skincare",
+      "age": 61,
+      "situation": "Befindet sich in der Postmenopause und hat die stärksten hormonellen Schwankungen hinter sich [1]. Ihre Haut ist nun dauerhaft trockener, dünner und schutzbedürftig [21]. Sie hat den Kampf gegen das Alter aufgegeben und sucht stattdessen nach Pflege, die ihr guttut ('Emotional Skincare') [22].",
+      "buyingTriggers": [
+        "Pflege als Akt der Selbstliebe und 'Emotional Skincare' – Kosmetik, die glücklich macht [22].",
+        "Fokus auf reichhaltige Feuchtigkeit, Spannkraft und den Schutz vor Umwelteinflüssen [21].",
+        "Der Verzicht auf die 'Prosecco-Kultur' zugunsten eines achtsamen, gesunden Lebensstils [23]."
+      ],
+      "objections": [
+        "Ist das Konzept nur für Frauen Anfang 50 gedacht, die mitten in den Hitzewallungen stecken?",
+        "Wird mir hier wieder ein unrealistisches Anti-Aging-Ideal verkauft?",
+        "Sind die empfohlenen Produkte reichhaltig genug für meine dauerhaft trockenere Haut?"
       ],
       "skepticismLevel": "low"
     }

@@ -158,6 +158,13 @@ export default function PricingSection() {
                   {option.priceLabel}
                 </p>
                 <p className={`relative font-body mt-1 text-xs text-erdton900/75 ${zIndexClass.text}`}>{option.vatLabel}</p>
+                {option.savingsLabel ? (
+                  <p
+                    className={`relative font-heading mt-2 text-sm font-bold text-coverSalbei ${zIndexClass.text}`}
+                  >
+                    {option.savingsLabel}
+                  </p>
+                ) : null}
                 <p className={`relative font-body mt-2 text-sm text-erdton900/80 ${zIndexClass.text}`}>{option.shippingLabel}</p>
                 {validationByOption[option.id].length > 0 ? (
                   <ul className={`relative mt-3 space-y-1 text-xs text-erdton900/80 ${zIndexClass.text}`}>

@@ -14,7 +14,8 @@
     "lint": "eslint . --max-warnings=0",
     "review:website": "playwright test",
     "review:icp": "node scripts/reviews/generate-icp-scorecard.mjs",
-    "review": "npm run review:website && npm run review:icp"
+    "review": "node scripts/reviews/run-review.mjs",
+    "shopify:bootstrap": "node scripts/shopify/bootstrap-storefront-token.mjs"
   },
   "keywords": [],
   "author": "",

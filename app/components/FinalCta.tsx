@@ -1,5 +1,6 @@
 "use client";
 
+import { BUNDLE_EUR, formatPriceDe } from "@/lib/pricing";
 import { zIndexClass } from "@/lib/design-tokens";
 import { CoverCircleDuo } from "./Icons";
 
@@ -14,8 +15,8 @@ export default function FinalCta() {
       <div className={`relative mx-auto max-w-4xl px-6 py-8 text-center md:px-12 ${zIndexClass.text}`}>
         <h2 className="font-heading type-h2 text-white">Befrei deine Haut und deinen Alltag.</h2>
         <p className="font-body type-body mt-5 text-white/90">
-          Wähle jetzt dein Paket. Entscheide dich für das Regenerations-Bundle und wir schenken dir die
-          Versandkosten.
+          Wähle jetzt dein Paket. Das Regenerations-Bundle gibt es für {formatPriceDe(BUNDLE_EUR)} inkl. MwSt. –
+          inklusive gratis Versand in der DACH-Region.
         </p>
         <a
           href="#angebote"

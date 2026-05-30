@@ -1,6 +1,13 @@
 import "server-only";
 
-export type CheckoutPackage = "guide" | "bundle";
+import {
+  buildShopifyCartPermalink,
+  getShopifyStoreDomain,
+  getShopifyVariantGid,
+  type CheckoutPackage,
+} from "@/lib/shopify-config";
+
+export type { CheckoutPackage };
 
 interface CartCreateResponse {
   data?: {
@@ -27,24 +34,15 @@ const CART_CREATE_MUTATION = `
   }
 `;
 
-function getVariantId(packageId: CheckoutPackage): string | null {
-  const envKey =
-    packageId === "guide"
-      ? process.env.SHOPIFY_VARIANT_ID_GUIDE
-      : process.env.SHOPIFY_VARIANT_ID_BUNDLE;
-  const value = envKey?.trim();
-  return value && value.length > 0 ? value : null;
-}
-
 function getStorefrontConfig(): { domain: string; token: string } | null {
-  const domain = process.env.SHOPIFY_STORE_DOMAIN?.trim();
+  const domain = getShopifyStoreDomain();
   const token = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim();
 
   if (!domain || !token) {
     return null;
   }
 
-  return { domain: domain.replace(/^https?:\/\//, "").replace(/\/$/, ""), token };
+  return { domain, token };
 }
 
 export function isShopifyConfigured(): boolean {
@@ -53,7 +51,7 @@ export function isShopifyConfigured(): boolean {
     return false;
   }
 
-  return Boolean(getVariantId("guide") && getVariantId("bundle"));
+  return Boolean(getShopifyVariantGid("guide") && getShopifyVariantGid("bundle"));
 }
 
 export async function createShopifyCheckout(
@@ -61,7 +59,7 @@ export async function createShopifyCheckout(
   quantity = 1,
 ): Promise<{ checkoutUrl: string; cartId: string }> {
   const config = getStorefrontConfig();
-  const variantId = getVariantId(packageId);
+  const variantId = getShopifyVariantGid(packageId);
 
   if (!config || !variantId) {
     throw new Error("SHOPIFY_NOT_CONFIGURED");
@@ -69,6 +67,7 @@ export async function createShopifyCheckout(
 
   const apiVersion = process.env.SHOPIFY_STOREFRONT_API_VERSION?.trim() || "2024-10";
   const endpoint = `https://${config.domain}/api/${apiVersion}/graphql.json`;
+  const qty = Math.min(Math.max(quantity, 1), 10);
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -79,7 +78,7 @@ export async function createShopifyCheckout(
     body: JSON.stringify({
       query: CART_CREATE_MUTATION,
       variables: {
-        lines: [{ merchandiseId: variantId, quantity: Math.min(Math.max(quantity, 1), 10) }],
+        lines: [{ merchandiseId: variantId, quantity: qty }],
       },
     }),
     cache: "no-store",
@@ -102,6 +101,10 @@ export async function createShopifyCheckout(
 
   const cart = json.data?.cartCreate?.cart;
   if (!cart?.checkoutUrl || !cart.id) {
+    const permalink = buildShopifyCartPermalink(packageId, qty);
+    if (permalink) {
+      return { checkoutUrl: permalink, cartId: `permalink-${variantId}` };
+    }
     throw new Error("SHOPIFY_EMPTY_CART");
   }
 

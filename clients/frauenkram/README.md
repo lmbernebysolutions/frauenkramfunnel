@@ -22,6 +22,13 @@ PLAYWRIGHT_BASE_URL=http://localhost:3000 npm run review:icp
 npm run review
 ```
 
+## Shopify Go-Live
+
+1. `.env.local` aus `.env.example` (Domain + Variant-GIDs sind vorgegeben).
+2. `SHOPIFY_CLIENT_ID` / `SHOPIFY_CLIENT_SECRET` aus dem Dev Dashboard eintragen.
+3. `npm run shopify:bootstrap` → `SHOPIFY_STOREFRONT_ACCESS_TOKEN` in Vercel setzen.
+4. Alternativ (nur Dev): `POST /api/shopify/bootstrap` mit `Authorization: Bearer $SHOPIFY_BOOTSTRAP_SECRET`.
+
 Reports landen in `reviews/`:
 
 - `YYYY-MM-DD-website-review.md`

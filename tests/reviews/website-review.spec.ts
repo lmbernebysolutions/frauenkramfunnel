@@ -46,6 +46,8 @@ test.describe("Frauenkram Funnel – Website Review", () => {
 
     const bundlePrice = page.getByText(/Preis: €57,80/);
     await expect(bundlePrice).toBeVisible();
+    await expect(page.getByText(/Du sparst €4,90/)).toBeVisible();
+    await expect(page.getByText(/Einzelwert: €62,70/)).toBeVisible();
     const vat = page.getByText("inkl. MwSt.", { exact: true }).first();
     await expect(vat).toBeVisible();
 

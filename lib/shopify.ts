@@ -1,3 +1,7 @@
+/**
+ * Client-seitiger Checkout-Bridge zu /api/checkout.
+ * GraphQL cartCreate (Storefront API) läuft serverseitig in lib/shopify-storefront.ts.
+ */
 export type CheckoutPackage = "guide" | "bundle";
 
 export interface CheckoutResult {

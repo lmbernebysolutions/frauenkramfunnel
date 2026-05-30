@@ -19,6 +19,8 @@ export interface PricingOption {
   isBestseller: boolean;
   /** Durchgestrichener Normalpreis (PAngV / Einzelwert) */
   compareAtPriceLabel?: string;
+  /** Ersparnis gegenüber Einzelkauf (Bundle) */
+  savingsLabel?: string;
   learnMoreLink?: {
     href: string;
     label: string;
