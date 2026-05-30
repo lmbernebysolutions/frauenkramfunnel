@@ -151,15 +151,15 @@ export default function PricingSection() {
                   </ul>
                 ) : null}
                 </button>
-                {option.oilLearnMore ? (
+                {option.learnMoreLink ? (
                   <div className="border-t border-coverSand/70 px-6 pb-5 pt-3">
                     <a
-                      href={option.oilLearnMore.href}
+                      href={option.learnMoreLink.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex min-h-[48px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas"
                     >
-                      {option.oilLearnMore.label}
+                      {option.learnMoreLink.label}
                     </a>
                   </div>
                 ) : null}

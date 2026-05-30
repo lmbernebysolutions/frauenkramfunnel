@@ -19,7 +19,7 @@ export interface PricingOption {
   isBestseller: boolean;
   /** Durchgestrichener Normalpreis (PAngV / Einzelwert) */
   compareAtPriceLabel?: string;
-  oilLearnMore?: {
+  learnMoreLink?: {
     href: string;
     label: string;
   };

@@ -52,6 +52,10 @@ export const pricingOptions: PricingOption[] = [
     vatLabel: "inkl. MwSt.",
     shippingLabel: "Versandkosten: €4,90 (DACH).",
     isBestseller: false,
+    learnMoreLink: {
+      href: "https://www.amazon.de/-/en/Carsta-Pr%C3%B6stler-ebook/dp/B0G3XYHSMF/ref=tmm_kin_swatch_0",
+      label: "Zur Kindle-Version →",
+    },
   },
   {
     id: "bundle",
@@ -62,7 +66,7 @@ export const pricingOptions: PricingOption[] = [
     vatLabel: "inkl. MwSt.",
     shippingLabel: "✅ Bonus: GRATIS VERSAND",
     isBestseller: true,
-    oilLearnMore: {
+    learnMoreLink: {
       href: "https://carstaproestler.de/products/lovely-body-oil-150-ml",
       label: "Mehr erfahren zum Lovely Body Oil →",
     },
