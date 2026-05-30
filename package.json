@@ -11,7 +11,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "review:website": "playwright test",
+    "review:icp": "node scripts/reviews/generate-icp-scorecard.mjs",
+    "review": "npm run review:website && npm run review:icp"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +33,7 @@
     "eslint-config-next": "^16.2.6",
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.17",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "@playwright/test": "^1.52.0"
   }
 }

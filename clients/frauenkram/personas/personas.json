@@ -1,0 +1,64 @@
+{
+  "client": "frauenkram",
+  "product": "Frauenkram: Haut und Wechseljahre – Landingpage-Funnel",
+  "createdAt": "2026-05-30",
+  "personas": [
+    {
+      "id": "martina",
+      "name": "Martina",
+      "title": "Berufstätige Mutter (52)",
+      "segment": "Pragmatische Umsetzerin",
+      "age": 52,
+      "situation": "Vollzeit im Job, oft in einer Führungsposition, und privat als Teil der 'Sandwich-Generation' stark eingebunden [1]. Leidet häufig unter Erschöpfung und 'Brain Fog' [2]. Sucht klare, kurze Schritte gegen trockene, spannende Haut, wehrt sich aber gegen zusätzlichen Selbstoptimierungsdruck [3].",
+      "buyingTriggers": [
+        "Alltagstaugliche Routinen unter 5 Minuten als Akt der 'Self-Care' [3]",
+        "Verständliche Erklärung ohne Fachjargon",
+        "Vertrauen durch Expertin mit echtem Lebensalltag und geteilter Erfahrung (Shared Experience) [4]"
+      ],
+      "objections": [
+        "Der 'Alles-schon-gelesen'-Effekt und die Angst vor oberflächlicher Banalität [3]",
+        "Noch ein Ratgeber, der Zeit kostet und den ich nicht umsetze",
+        "Zu teuer für unklaren Nutzen"
+      ],
+      "skepticismLevel": "medium"
+    },
+    {
+      "id": "sabine",
+      "name": "Sabine",
+      "title": "Gesundheitsbewusste Perimenopause (49)",
+      "segment": "Natürlichkeits-Orientierte",
+      "age": 49,
+      "situation": "Befindet sich in der Perimenopause und möchte die hormonellen Ursachen (z. B. Östrogenabfall) verstehen, statt nur Symptome zu überdecken [5, 6]. Sie sucht einen ganzheitlichen Weg und ist extrem werbemüde gegenüber evidenzlosen 'Wunderpillen' [3].",
+      "buyingTriggers": [
+        "Ganzheitlicher Ansatz aus Ernährung, psychischer Gesundheit und Hautpflege [6]",
+        "Evidenzbasierte, dermazeutische Methodik (z. B. Aufklärung über Omega-Fettsäuren statt Paraffine) [7, 8]",
+        "Transparenz bei Preis und Inhalten"
+      ],
+      "objections": [
+        "Die 'Marketing-over-Medicine'-Skepsis: Wirkt das wissenschaftlich fundiert genug? [3]",
+        "Brauche ich wirklich das Buch (Front-End) UND das Öl (Back-End)? [8]",
+        "Datenschutz bei Tracking"
+      ],
+      "skepticismLevel": "high"
+    },
+    {
+      "id": "petra",
+      "name": "Petra",
+      "title": "Selbstzahlerin im Premium-Segment (56)",
+      "segment": "Investiert in Hautgesundheit",
+      "age": 56,
+      "situation": "Verfügt über hohe Kaufkraft (Haushaltsnetto oft über 5.000 €) und ist bereit, in ihre Lebensqualität zu investieren [9]. Hat bereits viel für Kosmetik ausgegeben und sucht nun einen strukturierten Pro-Aging-Plan gegen Kollagen- und Lipidverlust [8, 10].",
+      "buyingTriggers": [
+        "Bestseller-Bundle (Buch + hochwertiges Body Oil) mit Gratisversand [8]",
+        "Autorität, Expertentum und Social Proof (z. B. durch Testimonials) [11]",
+        "Schneller Checkout ohne Abo-Falle"
+      ],
+      "objections": [
+        "Preis-Leistung vs. Einzelprodukte",
+        "Lieferzeit und Retoure",
+        "Marketing-Tracking nach Einwilligung"
+      ],
+      "skepticismLevel": "low"
+    }
+  ]
+}

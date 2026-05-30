@@ -10,3 +10,9 @@ coverage
 .env.test.local
 .env.production.local
 tsconfig.tsbuildinfo
+
+# Playwright artifacts
+/test-results/
+/playwright-report/
+clients/frauenkram/reviews/playwright-report/
+.playwright-mcp/

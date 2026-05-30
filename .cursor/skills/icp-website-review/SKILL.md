@@ -15,7 +15,15 @@ Evaluate any online asset through the eyes of pre-built synthetic ICP personas. 
 
 ## Prerequisites
 
-Personas must exist at `clients/<client>/personas/personas.json`. If they don't, run `icp-persona-builder` first.
+Personas must exist at `clients/<client>/personas/personas.json`.
+
+**Frauenkram:** Personas liegen unter `clients/frauenkram/personas/personas.json`.
+
+```bash
+PLAYWRIGHT_BASE_URL=http://localhost:3000 npm run review:icp
+```
+
+Report: `clients/frauenkram/reviews/YYYY-MM-DD-icp-scorecard.md`
 
 ## Quick Start
 
