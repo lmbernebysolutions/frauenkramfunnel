@@ -15,6 +15,9 @@ test.describe("Frauenkram Funnel – Website Review", () => {
 
     await expect(page).toHaveTitle(/Frauenkram/i);
 
+    await expect(page.getByText(/zelluläre Lipidsynthese reaktivieren/i)).toBeVisible();
+    await expect(page.getByText(/Dermazeutische Longevity-Balance/i)).toBeVisible();
+
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toHaveCount(1);
 

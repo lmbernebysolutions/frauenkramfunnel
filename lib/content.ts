@@ -5,7 +5,7 @@ export const heroContent = {
     "FÜR DICH IN DEN WECHSELJAHREN – WENN DEIN KÖRPER SICH WIEDER RICHTIG ANFÜHLT.",
   headline: "Fühl dich wieder wohl in deiner Haut.",
   subHeadline:
-    "Erfahre von dermazeutischer Kosmetikerin und Hormoncoach Carsta Pröstler die natürlichen Longevity Balance Routinen, um Haut und Körper in der Menopause optimal zu unterstützen.",
+    "Dermazeutische Longevity-Balance-Routinen von Carsta Pröstler, die gezielt die zelluläre Lipidsynthese reaktivieren – für Haut und Hormonbalance in den Wechseljahren.",
   confidenceCue: "⭐️ 4.9/5 | Ratgeber (Paperback & Kindle) + Exklusives Bundle",
   ctaLabel: "→ Jetzt Buch sichern & Hautbild verbessern",
   microcopyLines: ["✓ 14 Tage Zufriedenheitsgarantie", "✓ Einmalige Zahlung – kein Abo"] as const,

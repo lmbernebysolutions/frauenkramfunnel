@@ -25,7 +25,9 @@ export default function Hero() {
           {heroContent.preHeadline}
         </p>
         <h1 className={`relative font-heading type-h1 text-white ${zIndexClass.text}`}>{heroContent.headline}</h1>
-        <p className={`relative font-body type-body mt-5 max-w-3xl text-white/90 ${zIndexClass.text}`}>
+        <p
+          className={`relative font-body mt-4 max-w-[21rem] text-pretty text-sm leading-snug text-white/90 sm:mt-5 sm:max-w-xl sm:text-[0.9375rem] sm:leading-relaxed md:max-w-2xl md:text-base md:leading-relaxed lg:max-w-3xl ${zIndexClass.text}`}
+        >
           {heroContent.subHeadline}
         </p>
         <p className={`relative font-body mt-8 text-sm text-white/90 ${zIndexClass.text}`}>{heroContent.confidenceCue}</p>

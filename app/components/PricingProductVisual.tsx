@@ -13,7 +13,7 @@ const productAssets = {
     className: "h-auto w-[88px] md:w-[100px]",
   },
   bundle: {
-    src: "/images/bundle-paket.webp",
+    src: "/images/bundle.png",
     alt: "Regenerations-Bundle – Frauenkram Buch und Lovely Body Oil",
     width: 1024,
     height: 1024,

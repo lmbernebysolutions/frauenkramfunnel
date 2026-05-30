@@ -4,59 +4,59 @@
   "createdAt": "2026-05-30",
   "personas": [
     {
-      "id": "martina",
-      "name": "Martina",
-      "title": "Berufstätige Mutter (52)",
-      "segment": "Pragmatische Umsetzerin",
-      "age": 52,
-      "situation": "Vollzeit im Job, oft in einer Führungsposition, und privat als Teil der 'Sandwich-Generation' stark eingebunden [1]. Leidet häufig unter Erschöpfung und 'Brain Fog' [2]. Sucht klare, kurze Schritte gegen trockene, spannende Haut, wehrt sich aber gegen zusätzlichen Selbstoptimierungsdruck [3].",
+      "id": "tina",
+      "name": "Tina",
+      "title": "Überforderte Symptom-Bekämpferin (47)",
+      "segment": "Verzweifelte Lösungssucherin im Milliardenmarkt",
+      "age": 47,
+      "situation": "Steht stellvertretend für Frauen, die bereits viel Geld für teure Einzelprodukte wie Menopause-Gummibärchen, Gele oder Retreats ausgegeben haben [1]. Sie leidet unter der Informationsflut und fühlt sich im unübersichtlichen Markt oft verunsichert [2, 3].",
       "buyingTriggers": [
-        "Alltagstaugliche Routinen unter 5 Minuten als Akt der 'Self-Care' [3]",
-        "Verständliche Erklärung ohne Fachjargon",
-        "Vertrauen durch Expertin mit echtem Lebensalltag und geteilter Erfahrung (Shared Experience) [4]"
+        "Das 'Holistic Solution'-Versprechen: Ein ganzheitliches 5-Säulen-System, das Ordnung ins Chaos bringt, statt vieler Einzelprodukte (Us vs. Them) [4].",
+        "Radikale Ehrlichkeit und geteilte Krisenerfahrung (Storytelling) durch die Autorin [5].",
+        "Klare, evidenzbasierte Abgrenzung von reinen Lifestyle-Versprechen [6, 7]."
       ],
       "objections": [
-        "Der 'Alles-schon-gelesen'-Effekt und die Angst vor oberflächlicher Banalität [3]",
-        "Noch ein Ratgeber, der Zeit kostet und den ich nicht umsetze",
-        "Zu teuer für unklaren Nutzen"
-      ],
-      "skepticismLevel": "medium"
-    },
-    {
-      "id": "sabine",
-      "name": "Sabine",
-      "title": "Gesundheitsbewusste Perimenopause (49)",
-      "segment": "Natürlichkeits-Orientierte",
-      "age": 49,
-      "situation": "Befindet sich in der Perimenopause und möchte die hormonellen Ursachen (z. B. Östrogenabfall) verstehen, statt nur Symptome zu überdecken [5, 6]. Sie sucht einen ganzheitlichen Weg und ist extrem werbemüde gegenüber evidenzlosen 'Wunderpillen' [3].",
-      "buyingTriggers": [
-        "Ganzheitlicher Ansatz aus Ernährung, psychischer Gesundheit und Hautpflege [6]",
-        "Evidenzbasierte, dermazeutische Methodik (z. B. Aufklärung über Omega-Fettsäuren statt Paraffine) [7, 8]",
-        "Transparenz bei Preis und Inhalten"
-      ],
-      "objections": [
-        "Die 'Marketing-over-Medicine'-Skepsis: Wirkt das wissenschaftlich fundiert genug? [3]",
-        "Brauche ich wirklich das Buch (Front-End) UND das Öl (Back-End)? [8]",
-        "Datenschutz bei Tracking"
+        "Wird mir hier wieder nur 'gut vermarktete Hoffnung' verkauft? [1]",
+        "Ich habe schon so vieles probiert und Geld ausgegeben – hilft das wirklich? [1]",
+        "Wie unterscheidet sich das von den evidenzlosen Produkten auf dem Markt? [8]"
       ],
       "skepticismLevel": "high"
     },
     {
-      "id": "petra",
-      "name": "Petra",
-      "title": "Selbstzahlerin im Premium-Segment (56)",
-      "segment": "Investiert in Hautgesundheit",
-      "age": 56,
-      "situation": "Verfügt über hohe Kaufkraft (Haushaltsnetto oft über 5.000 €) und ist bereit, in ihre Lebensqualität zu investieren [9]. Hat bereits viel für Kosmetik ausgegeben und sucht nun einen strukturierten Pro-Aging-Plan gegen Kollagen- und Lipidverlust [8, 10].",
+      "id": "claudia",
+      "name": "Claudia",
+      "title": "Führungskraft im Dauerspagat (54)",
+      "segment": "Karrierefokussierte Perfektionistin",
+      "age": 54,
+      "situation": "Steht unter starkem beruflichen Druck und verheimlicht Beschwerden wie Hitzewallungen oder 'Brain Fog' am Arbeitsplatz aus Angst vor Kompetenzverlust ('The Invisible Burden') [9, 10]. Durch chronischen Stress und Schlafmangel ist ihr Cortisolspiegel dauerhaft erhöht [11].",
       "buyingTriggers": [
-        "Bestseller-Bundle (Buch + hochwertiges Body Oil) mit Gratisversand [8]",
-        "Autorität, Expertentum und Social Proof (z. B. durch Testimonials) [11]",
-        "Schneller Checkout ohne Abo-Falle"
+        "Wissenschaftlicher Kompass: Fokus auf mentale Leistungsfähigkeit, Schlaf und Blutzuckerstabilisierung [12, 13].",
+        "Diskrete und effiziente Umsetzbarkeit ohne großen Zeitaufwand im Berufsalltag [14].",
+        "Lösungen gegen den schleichenden Kontrollverlust im Job [15]."
       ],
       "objections": [
-        "Preis-Leistung vs. Einzelprodukte",
-        "Lieferzeit und Retoure",
-        "Marketing-Tracking nach Einwilligung"
+        "Ich habe keine Zeit, ein komplexes Programm in meinen Alltag zu integrieren [14].",
+        "Spricht das Buch meine spezifischen kognitiven Probleme (Gedächtnislücken, Brain Fog) an? [15]",
+        "Fehlende Energie für zusätzliche 'Optimierung' [7]."
+      ],
+      "skepticismLevel": "medium"
+    },
+    {
+      "id": "leonie",
+      "name": "Leonie",
+      "title": "Genießerin der neuen Lebensphase (58)",
+      "segment": "Pro-Aging Ästhetin",
+      "age": 58,
+      "situation": "Befindet sich in der Postmenopause und begreift diese Zeit als Chance für neue Freiheiten und Selbstentdeckung [16, 17]. Sie möchte sich von der 'Prosecco-Kultur' verabschieden und sucht stattdessen nach hochwertigen Self-Care-Ritualen gegen den Verlust von Kollagen und Feuchtigkeit [18, 19].",
+      "buyingTriggers": [
+        "Der 'Ritual of Self-Care'-Ansatz: Menopause nicht als Leiden, sondern als Zeit der persönlichen Erneuerung [20].",
+        "Detailliertes Wissen über Lipidverlust, Antioxidantien und hochwertige Pflegeöle [21, 22].",
+        "Hochwertige Upsell-Angebote (wie z. B. das Body Oil als tägliches Ritual) [20, 22]."
+      ],
+      "objections": [
+        "Sind die empfohlenen Routinen und Produkte wirklich hochwertig und rein? [23]",
+        "Ist das Buch nur auf die akute Phase der Menopause fokussiert oder auch für die Postmenopause relevant? [24]",
+        "Enthält das Konzept zu viele dogmatische Regeln statt Genuss? [7]"
       ],
       "skepticismLevel": "low"
     }

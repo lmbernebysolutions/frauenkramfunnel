@@ -8,98 +8,101 @@
 
 ## Executive Summary
 
-Die Landingpage trifft die Kern-ICPs (Wechseljahre, Haut, alltagstaugliche Routinen) mit warmer Du-Ansprache, transparenter Preisgestaltung und Consent-Gate. Stärken: Expertinnen-Story, Paketlogik, FAQ. Verbesserungspotenzial: noch klarere „Was passiert nach Klick?“-Kommunikation am Checkout und mehr segment-spezifische Proof-Elemente für skeptische Käuferinnen.
+Die Landingpage adressiert Wechseljahre, Haut und Hormonbalance mit transparenter Preisgestaltung und Consent-Gate. Der Hero nennt jetzt explizit die **zelluläre Lipidsynthese** und den **dermazeutischen** Ansatz – das stärkt besonders skeptische Personas (Tina). Stärken: Expertinnen-Story, Paketlogik, FAQ.
 
-**Durchschnittsscore: 8/10**
+**Durchschnittsscore: 8.3/10**
 
 | Persona | Segment | Score | Would Convert? |
 |---------|---------|:-----:|:--------------:|
-| Martina | Pragmatische Umsetzerin | 8/10 | Ja |
-| Sabine | Natürlichkeits-Orientierte | 8/10 | Ja |
-| Petra | Investiert in Hautgesundheit | 8/10 | Ja |
+| Tina | Verzweifelte Lösungssucherin im Milliardenmarkt | 8.4/10 | Ja |
+| Claudia | Karrierefokussierte Perfektionistin | 8.2/10 | Ja |
+| Leonie | Pro-Aging Ästhetin | 8.4/10 | Ja |
 
 ---
 
 ## Persona Reviews
 
-### Martinas Review (Berufstätige Mutter (52))
+### Tinas Review (Überforderte Symptom-Bekämpferin (47))
 
-**Ankommen mit:** Vollzeit im Job, oft in einer Führungsposition, und privat als Teil der 'Sandwich-Generation' stark eingebunden [1]. Leidet häufig unter Erschöpfung und 'Brain Fog' [2]. Sucht klare, kurze Schritte gegen trockene, spannende Haut, wehrt sich aber gegen zusätzlichen Selbstoptimierungsdruck [3].
+**Ankommen mit:** Steht stellvertretend für Frauen, die bereits viel Geld für teure Einzelprodukte wie Menopause-Gummibärchen, Gele oder Retreats ausgegeben haben [1]. Sie leidet unter der Informationsflut und fühlt sich im unübersichtlichen Markt oft verunsichert [2, 3].
 
 | Dimension | Score | Kurzfassung |
 |-----------|:-----:|-------------|
-| First Impression | 8/10 | Klare Du-Ansprache, Wechseljahre sofort erkennbar |
-| Messaging Relevance | 8/10 | Spricht meine Situation an |
+| First Impression | 9/10 | Klare Du-Ansprache, Wechseljahre und Lipid-Bezug sofort erkennbar |
+| Messaging Relevance | 9/10 | Lipidsynthese & dermazeutischer Tiefgang im Hero überzeugen |
 | Trust & Credibility | 8/10 | Expertin + Testimonials überzeugen |
 | Clarity & Navigation | 8/10 | Preise und FAQ findbar |
-| Objection Handling | 8/10 | FAQ und Garantie helfen |
-| **Overall** | **8/10** | **Würde den Ratgeber wählen und Checkout starten.** |
+| Objection Handling | 8/10 | FAQ, Garantie und Preistransparenz adressieren Einwände |
+| **Overall** | **8.4/10** | **Würde den Ratgeber oder das Bundle wählen und Checkout starten.** |
 
 **Liked:**
 - Du-Form und alltagstauglicher Ton
 - Klare Paketwahl mit Preis inkl. MwSt.
-- Kindle-Link für schnellen Einstieg
+- Wissenschaftlicher Lipid-/Hautbezug already above the fold
+- Dermazeutischer Ansatz statt reiner Lifestyle-Versprechen
 
 **Frustrated by:**
-- Der 'Alles-schon-gelesen'-Effekt und die Angst vor oberflächlicher Banalität [3]
-- Noch ein Ratgeber, der Zeit kostet und den ich nicht umsetze
-- Zu teuer für unklaren Nutzen
+- Wird mir hier wieder nur 'gut vermarktete Hoffnung' verkauft?
+- Ich habe schon so vieles probiert und Geld ausgegeben – hilft das wirklich?
+- Wie unterscheidet sich das von den evidenzlosen Produkten auf dem Markt?
 
-**Verdict:** Würde den Ratgeber wählen und Checkout starten.
+**Verdict:** Würde den Ratgeber oder das Bundle wählen und Checkout starten.
 
 ---
 
-### Sabines Review (Gesundheitsbewusste Perimenopause (49))
+### Claudias Review (Führungskraft im Dauerspagat (54))
 
-**Ankommen mit:** Befindet sich in der Perimenopause und möchte die hormonellen Ursachen (z. B. Östrogenabfall) verstehen, statt nur Symptome zu überdecken [5, 6]. Sie sucht einen ganzheitlichen Weg und ist extrem werbemüde gegenüber evidenzlosen 'Wunderpillen' [3].
+**Ankommen mit:** Steht unter starkem beruflichen Druck und verheimlicht Beschwerden wie Hitzewallungen oder 'Brain Fog' am Arbeitsplatz aus Angst vor Kompetenzverlust ('The Invisible Burden') [9, 10]. Durch chronischen Stress und Schlafmangel ist ihr Cortisolspiegel dauerhaft erhöht [11].
 
 | Dimension | Score | Kurzfassung |
 |-----------|:-----:|-------------|
-| First Impression | 8/10 | Klare Du-Ansprache, Wechseljahre sofort erkennbar |
-| Messaging Relevance | 9/10 | Spricht meine Situation an |
+| First Impression | 9/10 | Klare Du-Ansprache, Wechseljahre und Lipid-Bezug sofort erkennbar |
+| Messaging Relevance | 8/10 | Spricht meine Situation und Methodik an |
 | Trust & Credibility | 8/10 | Expertin + Testimonials überzeugen |
 | Clarity & Navigation | 8/10 | Preise und FAQ findbar |
-| Objection Handling | 7/10 | FAQ und Garantie helfen |
-| **Overall** | **8/10** | **Würde den Ratgeber wählen und Checkout starten.** |
+| Objection Handling | 8/10 | FAQ, Garantie und Preistransparenz adressieren Einwände |
+| **Overall** | **8.2/10** | **Würde den Ratgeber oder das Bundle wählen und Checkout starten.** |
 
 **Liked:**
 - Du-Form und alltagstauglicher Ton
 - Klare Paketwahl mit Preis inkl. MwSt.
-- Kindle-Link für schnellen Einstieg
+- Wissenschaftlicher Lipid-/Hautbezug already above the fold
+- Ganzheitlicher Hormon-Haut-Kompass
 
 **Frustrated by:**
-- Die 'Marketing-over-Medicine'-Skepsis: Wirkt das wissenschaftlich fundiert genug? [3]
-- Brauche ich wirklich das Buch (Front-End) UND das Öl (Back-End)? [8]
-- Datenschutz bei Tracking
+- Ich habe keine Zeit, ein komplexes Programm in meinen Alltag zu integrieren .
+- Spricht das Buch meine spezifischen kognitiven Probleme (Gedächtnislücken, Brain Fog) an?
+- Fehlende Energie für zusätzliche 'Optimierung' .
 
-**Verdict:** Würde den Ratgeber wählen und Checkout starten.
+**Verdict:** Würde den Ratgeber oder das Bundle wählen und Checkout starten.
 
 ---
 
-### Petras Review (Selbstzahlerin im Premium-Segment (56))
+### Leonies Review (Genießerin der neuen Lebensphase (58))
 
-**Ankommen mit:** Verfügt über hohe Kaufkraft (Haushaltsnetto oft über 5.000 €) und ist bereit, in ihre Lebensqualität zu investieren [9]. Hat bereits viel für Kosmetik ausgegeben und sucht nun einen strukturierten Pro-Aging-Plan gegen Kollagen- und Lipidverlust [8, 10].
+**Ankommen mit:** Befindet sich in der Postmenopause und begreift diese Zeit als Chance für neue Freiheiten und Selbstentdeckung [16, 17]. Sie möchte sich von der 'Prosecco-Kultur' verabschieden und sucht stattdessen nach hochwertigen Self-Care-Ritualen gegen den Verlust von Kollagen und Feuchtigkeit [18, 19].
 
 | Dimension | Score | Kurzfassung |
 |-----------|:-----:|-------------|
-| First Impression | 8/10 | Klare Du-Ansprache, Wechseljahre sofort erkennbar |
-| Messaging Relevance | 8/10 | Spricht meine Situation an |
+| First Impression | 9/10 | Klare Du-Ansprache, Wechseljahre und Lipid-Bezug sofort erkennbar |
+| Messaging Relevance | 9/10 | Spricht meine Situation und Methodik an |
 | Trust & Credibility | 8/10 | Expertin + Testimonials überzeugen |
 | Clarity & Navigation | 8/10 | Preise und FAQ findbar |
-| Objection Handling | 8/10 | FAQ und Garantie helfen |
-| **Overall** | **8/10** | **Würde das Bundle wählen und Checkout starten.** |
+| Objection Handling | 8/10 | FAQ, Garantie und Preistransparenz adressieren Einwände |
+| **Overall** | **8.4/10** | **Würde das Regenerations-Bundle mit Body-Oil-Ritual wählen.** |
 
 **Liked:**
 - Du-Form und alltagstauglicher Ton
 - Klare Paketwahl mit Preis inkl. MwSt.
-- Bestseller-Bundle mit Gratisversand
+- Wissenschaftlicher Lipid-/Hautbezug already above the fold
+- Bundle mit Body Oil als Self-Care-Ritual
 
 **Frustrated by:**
-- Preis-Leistung vs. Einzelprodukte
-- Lieferzeit und Retoure
-- Marketing-Tracking nach Einwilligung
+- Sind die empfohlenen Routinen und Produkte wirklich hochwertig und rein?
+- Ist das Buch nur auf die akute Phase der Menopause fokussiert oder auch für die Postmenopause relevant?
+- Enthält das Konzept zu viele dogmatische Regeln statt Genuss?
 
-**Verdict:** Würde das Bundle wählen und Checkout starten.
+**Verdict:** Würde das Regenerations-Bundle mit Body-Oil-Ritual wählen.
 
 
 ---
@@ -107,21 +110,21 @@ Die Landingpage trifft die Kern-ICPs (Wechseljahre, Haut, alltagstaugliche Routi
 ## Cross-Persona Synthesis
 
 ### Consensus (alle Personas)
-- Preis + „inkl. MwSt.“ direkt an Paketen schätzen alle
+- Preis + „inkl. MwSt.“ direkt an Paketen
 - Du-Form und Wechseljahre-Bezug wirken glaubwürdig
-- Consent-Banner vor Tracking ist positiv (Sabine)
+- Consent-Banner vor Tracking schafft Vertrauen
 
 ### Segment-spezifische Gaps
-- **Sabine (skeptisch):** Wünscht mehr Wissenschafts-/Methoden-Tiefe above the fold
-- **Martina (zeitarm):** Braucht noch klarere „5-Minuten-Routine“-Visualisierung
-- **Petra (premium):** Bundle-Vorteil vs. Einzelkauf könnte noch stärker quantifiziert werden
+- **Tina (skeptisch):** Hero-Lipid-Claim adressiert Kern-Einwand – weiter FAQ-Tiefe nutzen
+- **Claudia (Karriere):** Brain-Fog-/Schlaf-Bezug könnte im Problem-Block expliziter sein
+- **Leonie (Pro-Aging):** Postmenopause-Ritual-Story im Bundle bereits stark
 
 ### Priority Matrix
 | Prio | Maßnahme | Impact |
 |------|----------|--------|
-| P1 | Checkout-Erfolg mit Shopify-Env in Production testen | Hoch |
-| P2 | Kurzer „So bestellst du“-Microcopy am Checkout-Button | Mittel |
-| P3 | Ein Mini-Proof-Block „3 Schritte in 4 Min“ im Hero | Mittel |
+| P1 | Shopify-Env auf Vercel setzen und Checkout smoke-testen | Hoch |
+| P2 | Optional: Brain-Fog-Microcopy im Problem-Block für Claudia | Mittel |
+| P3 | Production-Deploy + erneutes `npm run review` | Mittel |
 
 ---
 
