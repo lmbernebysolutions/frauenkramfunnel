@@ -3,12 +3,16 @@ import Link from "next/link";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import { CONSENT_STORAGE_KEY } from "@/lib/consent";
+import { SERVER_CONSENT_COOKIE_KEY } from "@/lib/server/consent-cookie";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description: "Datenschutzerklärung für den Frauenkram Landingpage-Funnel.",
 };
+
+const backLinkClassName =
+  "inline-flex min-h-[56px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas";
 
 export default function DatenschutzPage() {
   const { contact, shopifyPrivacyUrl, googlePrivacyUrl, googleAnalyticsOptOutUrl, url } = siteConfig;
@@ -18,26 +22,28 @@ export default function DatenschutzPage() {
       <Header />
       <main className="px-6 py-12 md:px-10 md:py-16">
         <article className="mx-auto max-w-3xl">
-          <Link
-            href="/"
-            className="inline-flex min-h-[48px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas"
-          >
+          <Link href="/" className={backLinkClassName}>
             ← Zurück zur Startseite
           </Link>
+
           <h1 className="font-heading type-h2 mt-6 text-erdton900">Datenschutzerklärung</h1>
-          <p className="font-body type-body mt-4 text-erdton900/85">
+
+          <p className="font-body type-body mt-4 leading-relaxed text-erdton900/85">
             Diese Datenschutzerklärung beschreibt, wie {siteConfig.legalName} personenbezogene Daten erfasst, verwendet
             und weitergibt, wenn du die Landingpage unter{" "}
             <a href={url} className="underline underline-offset-4">
               {url}
             </a>{" "}
-            (die „Website“) nutzt oder dort ein Produkt bestellst.
+            (das „Telemedium“ bzw. die „Website“) nutzt oder dort ein Produkt bestellst.
           </p>
 
           <div className="font-body type-body mt-8 space-y-8 text-erdton900/85">
             <section>
               <h2 className="font-heading type-h3 text-erdton900">1. Verantwortliche Stelle</h2>
               <p className="mt-3 leading-relaxed">
+                Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+                <br />
+                <br />
                 {siteConfig.legalName}
                 <br />
                 {contact.street}
@@ -58,18 +64,18 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="font-heading type-h3 text-erdton900">2. Von uns erfasste personenbezogene Daten</h2>
+
               <h3 className="font-heading mt-4 text-base font-bold text-erdton900">Geräteinformationen</h3>
               <p className="mt-2 leading-relaxed">
-                Wenn du die Website besuchst, erfassen wir automatisch bestimmte Informationen über dein Gerät,
-                darunter Informationen zum Webbrowser, der IP-Adresse, der Zeitzone und einigen Cookies, die auf deinem
-                Gerät installiert sind. Wenn du auf der Website navigierst, erfassen wir außerdem Informationen zu den
-                aufgerufenen Seiten, zu Referrer- und Suchbegriffen sowie darüber, wie du mit der Website interagierst.
-                Wir bezeichnen diese automatisch erfassten Informationen als „Geräteinformationen“.
+                Wenn du die Website besuchst, werden automatisch technische Informationen über dein Gerät und deinen
+                Zugriff verarbeitet, darunter Webbrowser, IP-Adresse, Zeitzone, aufgerufene Seiten, Referrer sowie – sofern
+                du einwilligst – Cookies und vergleichbare Technologien. Wir bezeichnen diese automatisch erfassten
+                Informationen als „Geräteinformationen“.
               </p>
-              <p className="mt-3 leading-relaxed">Wir erfassen Geräteinformationen mithilfe folgender Technologien:</p>
+              <p className="mt-3 leading-relaxed">Technologien im Einzelnen:</p>
               <ul className="mt-2 list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Cookies</strong> sind Datendateien auf deinem Gerät. Weitere Informationen findest du unter{" "}
+                  <strong>Cookies</strong> sind kleine Datendateien auf deinem Endgerät. Nähere Informationen:{" "}
                   <a
                     href="https://www.allaboutcookies.org"
                     className="underline underline-offset-4"
@@ -81,21 +87,33 @@ export default function DatenschutzPage() {
                   .
                 </li>
                 <li>
-                  <strong>Protokolldateien</strong> protokollieren Aktionen auf der Website (z. B. IP-Adresse,
-                  Browsertyp, Internetdienstanbieter, verweisende/Ausstiegsseiten, Datums-/Uhrzeitstempel).
+                  <strong>Protokolldateien (Logfiles)</strong> erfassen Aktionen auf der Website (z. B. IP-Adresse,
+                  Browsertyp, Internetdienstanbieter, verweisende und ausgestiegene Seiten, Datum und Uhrzeit des
+                  Zugriffs).
                 </li>
                 <li>
-                  <strong>Web Beacons, Tags und Pixel</strong> erfassen Informationen dazu, wie du auf der Website
-                  navigierst.
+                  <strong>Web Beacons, Tags und Pixel</strong> können – nur nach Einwilligung – Informationen darüber
+                  erfassen, wie du mit der Website interagierst.
                 </li>
               </ul>
+
               <h3 className="font-heading mt-6 text-base font-bold text-erdton900">Bestellinformationen</h3>
               <p className="mt-2 leading-relaxed">
-                Wenn du auf der Website ein Paket auswählst und den Checkout startest, wirst du zu unserem
-                Shopify-Onlineshop weitergeleitet. Dort werden bei einem Kauf oder Kaufversuch personenbezogene Daten
-                wie Name, Rechnungs- und Lieferadresse, Zahlungsinformationen, E-Mail-Adresse und Telefonnummer
-                verarbeitet. Wir bezeichnen diese Angaben als „Bestellinformationen“. Die Verarbeitung im Checkout
-                erfolgt durch Shopify als Auftragsverarbeiter.
+                Wählst du ein Paket und startest den Checkout, wirst du in unseren Shopify-Onlineshop weitergeleitet. Dort
+                werden bei einem Kauf oder Kaufversuch personenbezogene Daten wie Name, Rechnungs- und Lieferadresse,
+                Zahlungsinformationen, E-Mail-Adresse und Telefonnummer verarbeitet. Wir bezeichnen diese Angaben als
+                „Bestellinformationen“. Die Verarbeitung im Checkout erfolgt durch{" "}
+                <strong>Shopify International Limited</strong> als Auftragsverarbeiter gemäß Art. 28 DSGVO. Weitere
+                Informationen:{" "}
+                <a
+                  href={shopifyPrivacyUrl}
+                  className="underline underline-offset-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shopify Datenschutzerklärung
+                </a>
+                .
               </p>
               <p className="mt-3 leading-relaxed">
                 Mit „personenbezogene Daten“ in dieser Erklärung bezeichnen wir Geräteinformationen und
@@ -104,72 +122,83 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">3. Hosting dieser Landingpage</h2>
+              <h2 className="font-heading type-h3 text-erdton900">3. Hosting</h2>
               <p className="mt-3 leading-relaxed">
-                Diese Landingpage wird bei Vercel Inc. gehostet. Beim Aufruf werden technisch notwendige Daten (z. B.
-                IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp, angeforderte URL) in Server-Logfiles verarbeitet, um den
-                sicheren und stabilen Betrieb zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
-                (berechtigtes Interesse an einem sicheren Webauftritt).
+                Diese Landingpage wird bei <strong>Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723,
+                USA, gehostet. Beim Aufruf werden technisch notwendige Daten (insbesondere IP-Adresse, Zeitpunkt des
+                Zugriffs, Browsertyp, angeforderte URL) in Server-Logfiles verarbeitet, um den sicheren, stabilen und
+                fehlerfreien Betrieb zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+                Interesse an einem sicheren Webauftritt). Sofern Daten in Drittländer übermittelt werden, erfolgt dies auf
+                Grundlage geeigneter Garantien im Sinne von Art. 44 ff. DSGVO (z. B. Standardvertragsklauseln).
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">4. Einwilligung für Analyse- und Marketing-Tools</h2>
+              <h2 className="font-heading type-h3 text-erdton900">4. Analyse- und Marketing-Tools</h2>
               <p className="mt-3 leading-relaxed">
-                Tracking-Technologien (Google Tag Manager, Meta Pixel) und serverseitige Conversion-Erfassung (Meta
-                Conversions API über unseren First-Party-Endpunkt <code className="text-sm">/api/capi-proxy</code>)
-                werden <strong>erst nach deiner ausdrücklichen Einwilligung</strong> über den Consent-Banner aktiviert.
-                Die Entscheidung wird lokal unter dem Schlüssel{" "}
-                <code className="text-sm">{CONSENT_STORAGE_KEY}</code> gespeichert und zusätzlich in einem signierten,
-                HTTP-only-Cookie für serverseitige Prüfungen abgelegt. Du kannst deine Einwilligung jederzeit widerrufen,
-                indem du die Website-Daten in deinem Browser löschst.
+                Tracking- und Marketing-Technologien (Google Tag Manager, Meta Pixel) sowie die serverseitige
+                Weiterleitung von Conversion-Events an Meta (Conversions API über unseren First-Party-Endpunkt{" "}
+                <code className="text-sm">/api/capi-proxy</code>) werden <strong>ausschließlich nach deiner ausdrücklichen
+                Einwilligung</strong> aktiviert. Bis dahin bleiben alle entsprechenden Skripte und Server-Weiterleitungen
+                vollständig gesperrt (Consent-Gating).
               </p>
               <p className="mt-3 leading-relaxed">
-                Ohne Einwilligung werden keine Marketing-Skripte geladen und keine Events an Meta weitergeleitet.
+                <strong>Technische Umsetzung des Consent-Banners:</strong>
               </p>
+              <ul className="mt-2 list-disc space-y-2 pl-5">
+                <li>
+                  Deine Entscheidung („Akzeptieren“ / „Ablehnen“) wird im Browser unter dem Schlüssel{" "}
+                  <code className="text-sm">{CONSENT_STORAGE_KEY}</code> in <code className="text-sm">localStorage</code>{" "}
+                  gespeichert.
+                </li>
+                <li>
+                  Parallel setzt unser Endpunkt <code className="text-sm">/api/consent</code> ein signiertes,{" "}
+                  <strong>HttpOnly</strong>-Cookie (<code className="text-sm">{SERVER_CONSENT_COOKIE_KEY}</code>), damit
+                  serverseitige Prüfungen (z. B. für <code className="text-sm">/api/capi-proxy</code>) manipulationssicher
+                  erfolgen. Die Signierung nutzt <code className="text-sm">CONSENT_COOKIE_SECRET</code> (nur serverseitig).
+                </li>
+                <li>
+                  Ohne Einwilligung (<code className="text-sm">granted</code>) werden keine Marketing-Skripte geladen und
+                  keine Events an Meta weitergeleitet.
+                </li>
+                <li>
+                  Du kannst deine Einwilligung jederzeit widerrufen, indem du die Website-Daten in deinem Browser löschst
+                  und die Seite erneut aufrufst.
+                </li>
+              </ul>
             </section>
 
             <section>
               <h2 className="font-heading type-h3 text-erdton900">
-                5. Wie verwenden wir deine personenbezogenen Daten?
+                5. Zwecke und Rechtsgrundlagen der Verarbeitung
               </h2>
               <p className="mt-3 leading-relaxed">
-                Wir verwenden Bestellinformationen zur Ausführung von Bestellungen über Shopify (Zahlungsabwicklung,
-                Versand, Rechnungen/Bestellbestätigungen), zur Kommunikation mit dir, zur Betrugsprüfung und – sofern du
-                dem optionalen Marketing-Opt-in zugestimmt hast – für Informationen zu Produkten und Angeboten.
+                Wir verarbeiten Bestellinformationen zur Vertragserfüllung und Abwicklung deiner Bestellung über Shopify
+                (Zahlung, Versand, Bestellbestätigung, Betrugsprävention) – Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO.
               </p>
               <p className="mt-3 leading-relaxed">
-                Geräteinformationen nutzen wir – nur bei erteilter Einwilligung – zur Risiko- und Betrugsprüfung sowie zur
-                Verbesserung und Optimierung unserer Website und Marketingmaßnahmen.
+                Geräteinformationen im Rahmen des Hostings verarbeiten wir zur Bereitstellung der Website – Art. 6 Abs. 1
+                lit. f DSGVO. Analyse- und Marketingdaten verarbeiten wir nur bei Einwilligung – Art. 6 Abs. 1 lit. a DSGVO.
+                Das optionale Marketing-Opt-in im Checkout ist freiwillig und keine Kaufbedingung.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">6. Weitergabe deiner personenbezogenen Daten</h2>
-              <p className="mt-3 leading-relaxed">
-                Wir geben personenbezogene Daten an Dienstleister weiter, die uns bei der Nutzung wie oben beschrieben
-                unterstützen, z. B.:
-              </p>
-              <ul className="mt-2 list-disc space-y-2 pl-5">
+              <h2 className="font-heading type-h3 text-erdton900">6. Weitergabe an Dienstleister</h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
                 <li>
-                  <strong>Shopify</strong> für den Onlineshop und Checkout:{" "}
-                  <a
-                    href={shopifyPrivacyUrl}
-                    className="underline underline-offset-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Shopify Datenschutz
+                  <strong>Shopify</strong> – Onlineshop und Checkout (
+                  <a href={shopifyPrivacyUrl} className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
+                    Datenschutz
                   </a>
+                  )
                 </li>
                 <li>
-                  <strong>Google Analytics / Google Tag Manager</strong> (nur nach Einwilligung):{" "}
-                  <a
-                    href={googlePrivacyUrl}
-                    className="underline underline-offset-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <strong>Vercel Inc.</strong> – Hosting dieser Landingpage
+                </li>
+                <li>
+                  <strong>Google</strong> (Tag Manager / Analytics, nur nach Einwilligung) –{" "}
+                  <a href={googlePrivacyUrl} className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
                     Google Datenschutz
                   </a>
                   , Opt-out:{" "}
@@ -179,133 +208,112 @@ export default function DatenschutzPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Google Analytics deaktivieren
+                    Browser-Add-on zur Deaktivierung von Google Analytics
                   </a>
                 </li>
                 <li>
-                  <strong>Meta Platforms</strong> (Meta Pixel und Conversions API, nur nach Einwilligung) für
-                  Kampagnenmessung
-                </li>
-                <li>
-                  <strong>Vercel</strong> für Hosting dieser Landingpage
+                  <strong>Meta Platforms</strong> (Pixel und Conversions API, nur nach Einwilligung)
                 </li>
               </ul>
               <p className="mt-3 leading-relaxed">
-                Wir können Daten weitergeben, um gesetzliche Pflichten zu erfüllen oder unsere Rechte zu schützen.
+                Eine Weitergabe kann ferner erfolgen, wenn wir gesetzlich dazu verpflichtet sind oder unsere Rechte
+                durchsetzen müssen.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">
-                7. Meta Conversion-Tracking (Pixel & Conversions API)
-              </h2>
+              <h2 className="font-heading type-h3 text-erdton900">7. Speicherdauer</h2>
               <p className="mt-3 leading-relaxed">
-                Zur Optimierung unserer Werbemaßnahmen setzen wir – nur nach Einwilligung – Meta-Pixel und die Meta
-                Conversions API ein. Dabei werden Event-Daten (z. B. Seitenaufrufe, Produktinteraktionen, Checkout-Start)
-                sowie pseudonymisierte technische Daten erfasst und an Meta Platforms Ireland Ltd. übermittelt. Die
-                Übermittlung erfolgt über unseren eigenen Server-Endpunkt; direkt identifizierbare Zahlungsdaten werden
-                nicht über diesen Funnel erfasst. Mit dem technischen Dienstleister besteht ein Vertrag zur
-                Auftragsverarbeitung gemäß Art. 28 DSGVO.
+                Personenbezogene Daten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist
+                oder gesetzliche Aufbewahrungsfristen bestehen. Server-Logfiles beim Hosting werden in der Regel nur für
+                einen begrenzten Zeitraum vorgehalten. Bestellinformationen bei Shopify richten sich nach den dortigen
+                Aufbewahrungsregeln und handels- sowie steuerrechtlichen Pflichten.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">8. Verhaltensbasierte Werbung</h2>
+              <h2 className="font-heading type-h3 text-erdton900">8. Deine Rechte als betroffene Person</h2>
               <p className="mt-3 leading-relaxed">
-                Bei Einwilligung können wir personenbezogene Daten für zielgerichtete Werbung nutzen. Informationen:{" "}
-                <a
-                  href="https://www.networkadvertising.org/understanding-online-advertising/how-does-it-work"
-                  className="underline underline-offset-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  NAI – How does online advertising work?
-                </a>
-                . Opt-out-Links u. a.:{" "}
-                <a
-                  href="https://www.facebook.com/settings/?tab=ads"
-                  className="underline underline-offset-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Facebook
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.google.com/settings/ads/anonymous"
-                  className="underline underline-offset-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Google
-                </a>
-                ,{" "}
-                <a
-                  href="http://optout.aboutads.info/"
-                  className="underline underline-offset-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Digital Advertising Alliance
+                Du hast gegenüber uns folgende Rechte hinsichtlich der dich betreffenden personenbezogenen Daten:
+              </p>
+              <ul className="mt-3 list-disc space-y-3 pl-5 leading-relaxed">
+                <li>
+                  <strong>Art. 15 DSGVO – Auskunft:</strong> Du kannst Auskunft über die von uns verarbeiteten
+                  personenbezogenen Daten verlangen.
+                </li>
+                <li>
+                  <strong>Art. 16 DSGVO – Berichtigung:</strong> Du kannst die Berichtigung unrichtiger oder die
+                  Vervollständigung unvollständiger Daten verlangen.
+                </li>
+                <li>
+                  <strong>Art. 17 DSGVO – Löschung:</strong> Du kannst die Löschung deiner personenbezogenen Daten
+                  verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                </li>
+                <li>
+                  <strong>Art. 18 DSGVO – Einschränkung der Verarbeitung:</strong> Du kannst unter bestimmten
+                  Voraussetzungen die Einschränkung der Verarbeitung verlangen.
+                </li>
+                <li>
+                  <strong>Art. 20 DSGVO – Datenübertragbarkeit:</strong> Du hast das Recht, Daten, die du uns
+                  bereitgestellt hast, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder –
+                  soweit technisch machbar – die Übermittlung an einen anderen Verantwortlichen zu verlangen.
+                </li>
+                <li>
+                  <strong>Art. 21 DSGVO – Widerspruch:</strong> Du kannst der Verarbeitung personenbezogener Daten, die
+                  auf Art. 6 Abs. 1 lit. f DSGVO beruht, aus Gründen, die sich aus deiner besonderen Situation ergeben,
+                  jederzeit widersprechen. Bei Direktwerbung hast du ein uneingeschränktes Widerspruchsrecht.
+                </li>
+                <li>
+                  <strong>Art. 7 Abs. 3 DSGVO – Widerruf der Einwilligung:</strong> Eine erteilte Einwilligung (z. B. für
+                  Analyse-Tools) kannst du jederzeit mit Wirkung für die Zukunft widerrufen, ohne dass die Rechtmäßigkeit
+                  der bis zum Widerruf erfolgten Verarbeitung berührt wird.
+                </li>
+              </ul>
+              <p className="mt-4 leading-relaxed">
+                Zur Ausübung deiner Rechte genügt eine Nachricht an{" "}
+                <a href={`mailto:${contact.email}`} className="underline underline-offset-4">
+                  {contact.email}
                 </a>
                 .
+              </p>
+              <p className="mt-3 leading-relaxed">
+                <strong>Art. 77 DSGVO – Beschwerderecht:</strong> Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde
+                zu beschweren, insbesondere in dem Mitgliedstaat deines gewöhnlichen Aufenthaltsorts, deines Arbeitsplatzes
+                oder des Orts des mutmaßlichen Verstoßes.
               </p>
             </section>
 
             <section>
               <h2 className="font-heading type-h3 text-erdton900">9. Do Not Track</h2>
               <p className="mt-3 leading-relaxed">
-                Wir ändern unsere Datenerfassungs- und -nutzungsverfahren nicht automatisch, wenn dein Browser ein „Do
-                Not Track“-Signal sendet. Marketing-Tracking bleibt ohne deine Einwilligung deaktiviert.
+                Wir passen unsere Verfahren nicht automatisch an, wenn dein Browser ein „Do Not Track“-Signal sendet.
+                Marketing-Tracking bleibt ohne deine Einwilligung deaktiviert.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">10. Deine Rechte</h2>
-              <p className="mt-3 leading-relaxed">
-                Wenn du in Europa ansässig bist, hast du das Recht auf Auskunft, Berichtigung, Aktualisierung oder
-                Löschung deiner personenbezogenen Daten. Kontaktiere uns unter{" "}
-                <a href={`mailto:${contact.email}`} className="underline underline-offset-4">
-                  {contact.email}
-                </a>
-                . Wir verarbeiten Daten zur Vertragserfüllung (Bestellung) oder auf Grundlage berechtigter Interessen.
-                Daten können außerhalb Europas (z. B. USA, Kanada) übertragen werden, sofern geeignete Garantien bestehen.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading type-h3 text-erdton900">11. Aufbewahrung von Daten</h2>
-              <p className="mt-3 leading-relaxed">
-                Bestellinformationen werden für unsere Aufzeichnungen aufbewahrt, sofern du nicht die Löschung
-                verlangst. Server-Logfiles werden nur so lange gespeichert, wie es für Betrieb und Sicherheit erforderlich
-                ist.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading type-h3 text-erdton900">12. Minderjährige</h2>
+              <h2 className="font-heading type-h3 text-erdton900">10. Minderjährige</h2>
               <p className="mt-3 leading-relaxed">
                 Die Website richtet sich nicht an Personen unter 18 Jahren.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">13. Änderungen</h2>
+              <h2 className="font-heading type-h3 text-erdton900">11. Änderungen dieser Datenschutzerklärung</h2>
               <p className="mt-3 leading-relaxed">
-                Wir können diese Datenschutzerklärung gelegentlich anpassen, um Änderungen unserer Vorgehensweise oder
-                rechtliche Anforderungen zu berücksichtigen.
+                Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich unsere Verarbeitungstätigkeiten oder
+                die rechtlichen Anforderungen ändern. Die jeweils aktuelle Fassung ist auf dieser Seite abrufbar.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading type-h3 text-erdton900">14. Kontakt</h2>
+              <h2 className="font-heading type-h3 text-erdton900">12. Kontakt</h2>
               <p className="mt-3 leading-relaxed">
-                Bei Fragen oder Beschwerden:{" "}
+                Bei Fragen zum Datenschutz erreichst du uns unter{" "}
                 <a href={`mailto:${contact.email}`} className="underline underline-offset-4">
                   {contact.email}
                 </a>
-                <br />
-                {contact.street}, {contact.postalCode} {contact.city}, {contact.country}
+                , {contact.street}, {contact.postalCode} {contact.city}, {contact.country}.
               </p>
             </section>
           </div>

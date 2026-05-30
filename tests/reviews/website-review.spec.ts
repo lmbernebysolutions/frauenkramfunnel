@@ -69,15 +69,20 @@ test.describe("Frauenkram Funnel – Website Review", () => {
   test("Rechtliche Seiten laden ohne Platzhalter", async ({ page }) => {
     await page.goto("/impressum");
     await expect(page.getByRole("heading", { level: 1, name: "Impressum" })).toBeVisible();
+    await expect(page.getByText(/§ 5 DDG/)).toBeVisible();
+    await expect(page.getByText(/§ 18 Abs\. 2 MStV/)).toBeVisible();
     await expect(page.getByText("Heinestr. 10")).toBeVisible();
     await expect(page.getByText("97209 Veitshöchheim")).toBeVisible();
     await expect(page.getByText("mail@cp-yourbalance.de")).toBeVisible();
+    await expect(page.getByText(/TMG|RStV|MDStV/)).toHaveCount(0);
     await expect(page.getByText("[Straße")).toHaveCount(0);
 
     await page.goto("/datenschutz");
     await expect(page.getByRole("heading", { level: 1, name: "Datenschutzerklärung" })).toBeVisible();
     await expect(page.getByText("Vercel Inc.")).toBeVisible();
     await expect(page.getByText("frauenkram_analytics_consent")).toBeVisible();
+    await expect(page.getByText(/Art\. 15 DSGVO/)).toBeVisible();
+    await expect(page.getByText(/Art\. 17 DSGVO/)).toBeVisible();
     await expect(page.getByText("[Anschrift]")).toHaveCount(0);
   });
 

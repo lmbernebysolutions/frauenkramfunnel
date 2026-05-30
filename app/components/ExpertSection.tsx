@@ -21,7 +21,11 @@ export default function ExpertSection() {
               className="h-auto w-full object-cover"
             />
           </div>
-          <h2 className={`relative font-heading type-h2 text-erdton900 ${zIndexClass.text}`}>{expertContent.headline}</h2>
+          <h2
+            className={`relative text-center font-heading type-h2 text-erdton900 md:text-left ${zIndexClass.text}`}
+          >
+            {expertContent.headline}
+          </h2>
           <p className={`relative font-body type-body mt-5 text-erdton900/80 ${zIndexClass.text}`}>{expertContent.story}</p>
         </div>
 
