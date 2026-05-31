@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import AnalyticsGate from "@/app/components/AnalyticsGate";
-import ConsentBanner from "@/app/components/ConsentBanner";
 import ExpertSection from "@/app/components/ExpertSection";
 import FaqSection from "@/app/components/FaqSection";
 import Footer from "@/app/components/Footer";
@@ -77,7 +76,6 @@ export default function Page() {
         <FinalCta />
       </main>
       <Footer />
-      <ConsentBanner />
     </>
   );
 }

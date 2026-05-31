@@ -80,7 +80,7 @@ export default function ConsentBanner() {
       aria-labelledby="consent-title"
       aria-describedby="consent-description"
       onKeyDown={handleDialogKeyDown}
-      className="fixed bottom-4 left-4 right-4 z-[60] rounded-2xl border border-coverSand bg-coverCanvas p-4 shadow-lg md:left-auto md:max-w-xl"
+      className="fixed bottom-4 left-4 right-4 z-[70] rounded-2xl border border-coverSand bg-coverCanvas p-4 shadow-lg md:left-auto md:max-w-xl"
     >
       <p id="consent-title" className="font-heading text-sm font-bold text-erdton900">
         Datenschutz & Einwilligung

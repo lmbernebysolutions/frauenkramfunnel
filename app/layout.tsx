@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Assistant, Tenor_Sans } from "next/font/google";
+import ConsentBanner from "@/app/components/ConsentBanner";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -35,7 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body className="min-h-screen bg-coverCanvas text-erdton900 antialiased">{children}</body>
+      <body className="min-h-screen bg-coverCanvas text-erdton900 antialiased">
+        {children}
+        <ConsentBanner />
+      </body>
     </html>
   );
 }
