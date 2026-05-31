@@ -74,7 +74,7 @@ export const pricingOptions: PricingOption[] = [
     compareAtPriceLabel: bundlePricing.compareAtPriceLabel,
     savingsLabel: bundlePricing.savingsLabel,
     vatLabel: "inkl. MwSt.",
-    shippingLabel: "✅ Bonus: GRATIS VERSAND",
+    shippingLabel: "",
     isBestseller: true,
     learnMoreLink: {
       href: "https://carstaproestler.de/products/lovely-body-oil-150-ml",

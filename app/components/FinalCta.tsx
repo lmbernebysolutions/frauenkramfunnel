@@ -25,8 +25,8 @@ export default function FinalCta() {
           → Jetzt Regenerations-Bundle sichern
         </a>
         <p className="font-body mt-4 text-sm text-white/85">
-          Einmalige Investition in deine Hautgesundheit. Kein Abonnement, keine automatischen Folgelieferungen.
-          14 Tage vollständige Zufriedenheitsgarantie.
+          Einmalige Investition. Kein Abonnement. Inklusive versichertem Premium-Versand mit Sendungsverfolgung für
+          das Regenerations-Bundle.
         </p>
       </div>
     </section>

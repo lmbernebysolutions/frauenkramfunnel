@@ -1,7 +1,8 @@
 import type { PricingOption } from "@/types/funnel";
 
 const VAT_TOKEN = "inkl. MwSt.";
-const PAID_SHIPPING_PATTERN = /versandkosten:\s*€\d{1,3},\d{2}/i;
+const PAID_SHIPPING_PATTERN =
+  /(?:versandkosten:|premium-versand|zzgl\.)[\s\S]{0,80}€?\s*\d{1,3},\d{2}/i;
 const EURO_AMOUNT_PATTERN = /€(?:\d{1,3}(?:\.\d{3})+|\d+),\d{2}/g;
 
 export function hasValidPriceDisclosure(option: PricingOption): boolean {
@@ -20,10 +21,14 @@ export function hasVatDisclosure(option: PricingOption): boolean {
 
 export function hasValidShippingDisclosure(option: PricingOption): boolean {
   if (option.id === "bundle") {
-    return /gratis versand/i.test(option.shippingLabel);
+    const freeShippingCopy = `${option.shippingLabel} ${option.savingsLabel ?? ""}`;
+    return /kostenlosem premium-versand|gratis versand/i.test(freeShippingCopy);
   }
 
-  return PAID_SHIPPING_PATTERN.test(option.shippingLabel);
+  return (
+    PAID_SHIPPING_PATTERN.test(option.shippingLabel) ||
+    PAID_SHIPPING_PATTERN.test(option.priceLabel)
+  );
 }
 
 export function validatePricingOption(option: PricingOption): string[] {

@@ -44,10 +44,18 @@ test.describe("Frauenkram Funnel – Website Review", () => {
     });
     await expect(marketing).not.toBeChecked();
 
-    const bundlePrice = page.getByText(/Preis: €57,80/);
-    await expect(bundlePrice).toBeVisible();
-    await expect(page.getByText(/Du sparst €4,90/)).toBeVisible();
-    await expect(page.getByText(/Einzelwert: €62,70/)).toBeVisible();
+    const pricing = page.locator("#angebote");
+    await expect(pricing.getByText(/Preis: €57,80/)).toBeVisible();
+    await expect(pricing.getByText(/zzgl\. €6,99 Premium-Versand mit Sendungsverfolgung/)).toBeVisible();
+    await expect(
+      pricing.getByText(/Inklusive kostenlosem Premium-Versand \(Du sparst 6,99 €\)/),
+    ).toBeVisible();
+    await expect(pricing.getByText(/Einzelwert: €64,79/)).toBeVisible();
+    await expect(
+      page.getByText(
+        /Inklusive versichertem Premium-Versand mit Sendungsverfolgung für das Regenerations-Bundle/,
+      ),
+    ).toBeVisible();
     const vat = page.getByText("inkl. MwSt.", { exact: true }).first();
     await expect(vat).toBeVisible();
 
@@ -71,16 +79,16 @@ test.describe("Frauenkram Funnel – Website Review", () => {
     await expect(page.getByRole("heading", { level: 1, name: "Impressum" })).toBeVisible();
     await expect(page.getByText(/§ 5 DDG/)).toBeVisible();
     await expect(page.getByText(/§ 18 Abs\. 2 MStV/)).toBeVisible();
-    await expect(page.getByText("Heinestr. 10")).toBeVisible();
-    await expect(page.getByText("97209 Veitshöchheim")).toBeVisible();
+    await expect(page.getByRole("main").getByText("Heinestr. 10").first()).toBeVisible();
+    await expect(page.getByRole("main").getByText("97209 Veitshöchheim").first()).toBeVisible();
     await expect(page.getByText("mail@cp-yourbalance.de")).toBeVisible();
     await expect(page.getByText(/TMG|RStV|MDStV/)).toHaveCount(0);
     await expect(page.getByText("[Straße")).toHaveCount(0);
 
     await page.goto("/datenschutz");
     await expect(page.getByRole("heading", { level: 1, name: "Datenschutzerklärung" })).toBeVisible();
-    await expect(page.getByText("Vercel Inc.")).toBeVisible();
-    await expect(page.getByText("frauenkram_analytics_consent")).toBeVisible();
+    await expect(page.getByRole("main").getByText("Vercel Inc.").first()).toBeVisible();
+    await expect(page.getByRole("main").getByText("frauenkram_analytics_consent")).toBeVisible();
     await expect(page.getByText(/Art\. 15 DSGVO/)).toBeVisible();
     await expect(page.getByText(/Art\. 17 DSGVO/)).toBeVisible();
     await expect(page.getByText("[Anschrift]")).toHaveCount(0);
