@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { dispatchCapiEvent } from "@/lib/analytics";
+import { dispatchCapiEvent, trackCommerceAddToCart } from "@/lib/analytics";
 import { pricingOptions, pricingTimeline } from "@/lib/content";
 import { CheckoutError, redirectToShopifyCheckout } from "@/lib/shopify";
 import { zIndexClass } from "@/lib/design-tokens";
@@ -36,7 +36,8 @@ export default function PricingSection() {
     setCheckoutState("processing");
 
     try {
-      await dispatchCapiEvent("initiate_checkout", {
+      trackCommerceAddToCart(selectedOption);
+      await dispatchCapiEvent("InitiateCheckout", {
         selected_package: selectedOption,
         marketing_opt_in: marketingOptIn,
         funnel_step: "pricing_section",

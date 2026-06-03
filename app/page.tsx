@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AnalyticsGate from "@/app/components/AnalyticsGate";
 import ExpertSection from "@/app/components/ExpertSection";
 import FaqSection from "@/app/components/FaqSection";
 import Footer from "@/app/components/Footer";
@@ -64,7 +63,6 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Header />
       <main>
-        <AnalyticsGate />
         <Hero />
         <SectionWaveDivider colorTop={colors.coverSalbei} colorBottom={colors.coverCanvas} />
         <SocialProof />

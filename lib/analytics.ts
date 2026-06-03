@@ -1,10 +1,21 @@
 import { hasGrantedConsent } from "@/lib/consent";
+import type { CheckoutPackage } from "@/lib/shopify";
+import { trackMetaAddToCart } from "@/lib/tracking/meta-pixel";
 
 type CapiPayload = Record<string, unknown>;
 
 interface DispatchResult {
   skipped: boolean;
   reason?: "no-consent" | "network-error";
+}
+
+/** Browser: Meta AddToCart (nur bei Consent). */
+export function trackCommerceAddToCart(packageId: CheckoutPackage): void {
+  if (!hasGrantedConsent()) {
+    return;
+  }
+
+  trackMetaAddToCart(packageId);
 }
 
 export async function dispatchCapiEvent(

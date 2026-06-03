@@ -15,7 +15,7 @@ const backLinkClassName =
   "inline-flex min-h-[56px] items-center font-body text-sm text-erdton900/70 underline-offset-4 transition-colors duration-300 hover:text-erdton900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coverKhaki focus-visible:ring-offset-2 focus-visible:ring-offset-coverCanvas";
 
 export default function DatenschutzPage() {
-  const { contact, shopifyPrivacyUrl, googlePrivacyUrl, googleAnalyticsOptOutUrl, url } = siteConfig;
+  const { contact, shopifyPrivacyUrl, url } = siteConfig;
 
   return (
     <>
@@ -136,7 +136,7 @@ export default function DatenschutzPage() {
             <section>
               <h2 className="font-heading type-h3 text-erdton900">4. Analyse- und Marketing-Tools</h2>
               <p className="mt-3 leading-relaxed">
-                Tracking- und Marketing-Technologien (Google Tag Manager, Meta Pixel) sowie die serverseitige
+                Meta Pixel (Browser) sowie die serverseitige
                 Weiterleitung von Conversion-Events an Meta (Conversions API über unseren First-Party-Endpunkt{" "}
                 <code className="text-sm">/api/capi-proxy</code>) werden <strong>ausschließlich nach deiner ausdrücklichen
                 Einwilligung</strong> aktiviert. Bis dahin bleiben alle entsprechenden Skripte und Server-Weiterleitungen
@@ -197,22 +197,15 @@ export default function DatenschutzPage() {
                   <strong>Vercel Inc.</strong> – Hosting dieser Landingpage
                 </li>
                 <li>
-                  <strong>Google</strong> (Tag Manager / Analytics, nur nach Einwilligung) –{" "}
-                  <a href={googlePrivacyUrl} className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
-                    Google Datenschutz
-                  </a>
-                  , Opt-out:{" "}
+                  <strong>Meta Platforms</strong> (Pixel und Conversions API, nur nach Einwilligung) –{" "}
                   <a
-                    href={googleAnalyticsOptOutUrl}
+                    href="https://www.facebook.com/privacy/policy"
                     className="underline underline-offset-4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Browser-Add-on zur Deaktivierung von Google Analytics
+                    Meta Datenschutzrichtlinie
                   </a>
-                </li>
-                <li>
-                  <strong>Meta Platforms</strong> (Pixel und Conversions API, nur nach Einwilligung)
                 </li>
               </ul>
               <p className="mt-3 leading-relaxed">

@@ -35,7 +35,7 @@ Always maps styles to these specific color hex-values:
 - Asset Handling: Geometric cover elements (Circles and Hexagon Waben-clusters) must be rendered as clean, inline-scaled responsive SVGs with explicit dimension parameters to avoid cumulative shifts.
 
 ## 6. DACH Compliance Guardrails (Legal Safeguards)
-- ePrivacy/GDPR Isolation: All tracking scripts (Meta Pixel, CAPI, GTM) must be completely muted and gated. No data tracking parameters, IP-scraping or server mutation triggers are allowed until `localStorage.getItem('frauenkram_analytics_consent') === 'granted'`.
+- ePrivacy/GDPR Isolation: All tracking scripts (Meta Pixel, CAPI) must be completely muted and gated. No data tracking parameters, IP-scraping or server mutation triggers are allowed until `localStorage.getItem('frauenkram_analytics_consent') === 'granted'`.
 - Kopplungsverbot (§ 7 GDPR): The marketing double-opt-in newsletter checkbox within the checkout sequence must strictly default to unchecked (`checked={false}`). Completing the product order must function perfectly even if the user leaves the marketing checkbox blank.
 - PAngV Transparency: Final checkout sums must dynamically recalculate shipping and tax components instantly and transparently within the user's focus view before the final legally binding action button.
 
